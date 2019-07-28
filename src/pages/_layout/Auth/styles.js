@@ -63,7 +63,7 @@ export const Content = styled.div`
     }
 
     a {
-      color: #fafafa;
+      color: #333;
       font-size: 13px;
       opacity: 0.8;
 
