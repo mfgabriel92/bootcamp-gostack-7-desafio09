@@ -1,13 +1,15 @@
 import produce from 'immer'
-import types from './types'
+import authTypes from '../auth/types'
 
-const INITIAL_STATE = {}
+const INITIAL_STATE = {
+  me: null,
+}
 
 export default function auth(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
-      case types.FOO:
-        draft.foo = 'bar'
+      case authTypes.SIGN_IN_SUCCESS:
+        draft.me = action.payload.user
         break
       default:
     }
