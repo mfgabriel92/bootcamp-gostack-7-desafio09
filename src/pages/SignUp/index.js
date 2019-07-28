@@ -7,15 +7,26 @@ import {
   FaPlusCircle,
 } from 'react-icons/fa'
 import { Form } from '@rocketseat/unform'
+import { toast } from 'react-toastify'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
+import ErrorMessage from '../../components/ErrorMessage'
 import logo from '../../assets/logo.png'
+import schema from '../../utils/validations/signup'
 
 function SignUp() {
+  async function validateForm(data) {
+    try {
+      await schema.validate(data, { abortEarly: false })
+    } catch ({ errors }) {
+      toast.error(<ErrorMessage errors={errors} />, { autoClose: 2000 })
+    }
+  }
+
   return (
     <>
       <img src={logo} alt="MeetApp" width="130px" />
-      <Form onSubmit={() => {}}>
+      <Form onSubmit={validateForm}>
         <Input
           icon={FaUserAlt}
           iconSize={18}
@@ -39,6 +50,13 @@ function SignUp() {
           icon={FaUnlockAlt}
           iconSize={18}
           name="password"
+          type="password"
+          placeholder="**********"
+        />
+        <Input
+          icon={FaUnlockAlt}
+          iconSize={18}
+          name="confirmPassword"
           type="password"
           placeholder="**********"
         />

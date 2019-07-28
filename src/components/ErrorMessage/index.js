@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Error, Ball } from './styles'
 
 function ErrorMessage({ errors }) {
   return (
     <>
       {errors.map(error => (
-        <p key={error}>{error}</p>
+        <Error key={error}>
+          <Ball /> {error}
+        </Error>
       ))}
     </>
   )
