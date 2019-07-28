@@ -5,10 +5,14 @@ import Auth from '../pages/_layout/Auth'
 import Dashboard from '../pages/_layout/Dashboard'
 
 function RouteWrapper({ component: Component, isPrivate, ...rest }) {
-  const isSigned = false
+  const isSigned = true
 
   if (!isSigned && isPrivate) {
     return <Redirect to="/" />
+  }
+
+  if (isSigned && !isPrivate) {
+    return <Redirect to="/dashboard" />
   }
 
   const Layout = isSigned ? Dashboard : Auth

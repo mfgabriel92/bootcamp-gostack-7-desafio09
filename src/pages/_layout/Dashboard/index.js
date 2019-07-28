@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../../../components/Header'
-import { Wrapper } from './styles'
+import { Wrapper, Container } from './styles'
 
 function Dashboard({ children }) {
   return (
     <Wrapper>
       <Header />
-      {children}
+      <Container>{children}</Container>
     </Wrapper>
   )
 }
