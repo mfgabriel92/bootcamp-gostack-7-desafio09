@@ -26,7 +26,7 @@ export function* signIn({ payload: { email, password } }) {
     toast.success(`Welcome, ${user.first_name}`)
     history.push('/dashboard')
   } catch (e) {
-    toast.error('Credentials do not match')
+    toast.error(e.response.data.error)
     yield put(failure())
   }
 }

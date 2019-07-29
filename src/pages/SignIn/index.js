@@ -28,11 +28,12 @@ function SignIn() {
 
   return (
     <>
-      <img src={logo} alt="MeetApp" width="130px" />
+      <img src={logo} alt="MeetApp" />
       <Form onSubmit={validateForm}>
         <Input
           icon={FaEnvelopeOpen}
           iconSize={18}
+          iconColor="#171618"
           name="email"
           type="email"
           placeholder="example@email.com"
@@ -40,6 +41,7 @@ function SignIn() {
         <Input
           icon={FaUnlockAlt}
           iconSize={18}
+          iconColor="#171618"
           name="password"
           type="password"
           placeholder="**********"
@@ -48,7 +50,7 @@ function SignIn() {
           icon={FaCheckCircle}
           iconSize={18}
           text="Login"
-          bgColor="#139187"
+          bgColor="#cb4949"
           isLoading={isLoading}
         />
         <Link to="/signup">No account? Create one</Link>

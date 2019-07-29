@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   height: 100%;
-  background: linear-gradient(90deg, #26a6bd, #139187);
+  background: linear-gradient(90deg, #cb4949 70%, #171618 30%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-  background: #fff;
+  background: #171618;
   padding: 20px 30px;
   width: 100%;
   max-width: 415px;
@@ -27,7 +27,7 @@ export const Content = styled.div`
     }
 
     div {
-      background: rgba(0, 0, 0, 0.6);
+      background: #fff;
       border: 0;
       height: 44px;
       padding: 0 15px;
@@ -43,28 +43,19 @@ export const Content = styled.div`
       input {
         background: none;
         border: 0;
-        color: #fff;
+        color: #171618;
         font-weight: bold;
         flex: 1;
         height: 100%;
 
         &::placeholder {
-          color: #fff;
+          color: #171618;
         }
       }
     }
 
-    span {
-      color: #fff;
-      flex: 1;
-      margin-bottom: 10px;
-      background: #ff8f8f;
-      padding: 3px 10px;
-      margin-top: -10px;
-    }
-
     a {
-      color: #333;
+      color: #fff;
       font-size: 13px;
       opacity: 0.8;
 

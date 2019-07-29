@@ -25,22 +25,25 @@ function SignUp() {
 
   return (
     <>
-      <img src={logo} alt="MeetApp" width="130px" />
+      <img src={logo} alt="MeetApp" />
       <Form onSubmit={validateForm}>
         <Input
           icon={FaUserAlt}
+          iconColor="#171618"
           iconSize={18}
           name="first_name"
           placeholder="John"
         />
         <Input
           icon={FaUserAlt}
+          iconColor="#171618"
           iconSize={18}
           name="last_name"
           placeholder="Doe"
         />
         <Input
           icon={FaEnvelopeOpen}
+          iconColor="#171618"
           iconSize={18}
           name="email"
           type="email"
@@ -48,6 +51,7 @@ function SignUp() {
         />
         <Input
           icon={FaUnlockAlt}
+          iconColor="#171618"
           iconSize={18}
           name="password"
           type="password"
@@ -55,6 +59,7 @@ function SignUp() {
         />
         <Input
           icon={FaUnlockAlt}
+          iconColor="#171618"
           iconSize={18}
           name="confirmPassword"
           type="password"
@@ -64,7 +69,7 @@ function SignUp() {
           icon={FaPlusCircle}
           iconSize={18}
           text="Register"
-          bgColor="#139187"
+          bgColor="#cb4949"
         />
         <Link to="/">Have an account? Login now</Link>
       </Form>

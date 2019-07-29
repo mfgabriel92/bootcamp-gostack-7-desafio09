@@ -5,7 +5,7 @@ export const Wrapper = styled.header`
   flex: 1;
   align-items: center;
   height: 64px;
-  background: linear-gradient(90deg, #26a6bd, #139187);
+  background: linear-gradient(90deg, #252d46, #26014b);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.3);
 `
 
