@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const Meetups = styled.div`
   margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
