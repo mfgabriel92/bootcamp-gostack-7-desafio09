@@ -3,54 +3,77 @@ import styled from 'styled-components'
 export const Container = styled.div`
   margin-top: 30px;
   width: 920px;
-  border: 1px solid #f0f0f0;
-  box-shadow: 5px 5px 15px -7px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 5px 5px 4px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(203, 73, 73, 0.2);
+
+  > strong {
+    position: absolute;
+    right: 5px;
+    top: -25px;
+    background: #cb4949;
+    color: #fff;
+    padding: 7px 14px;
+    display: flex;
+    border-radius: 50px;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
 `
 
 export const Info = styled.div`
-  height: 130px;
   padding: 25px;
   color: #7e7488;
   display: flex;
+  align-items: center;
 
   svg {
     margin-right: 7px;
   }
 
   div {
-    &:nth-of-type(1) {
-      width: 25%;
-      padding-right: 30px;
-      margin-right: 30px;
-      border-right: 1px solid #ddd;
+    height: 100%;
+  }
+`
 
-      strong {
-        display: block;
-        font-size: 26px;
-        max-lines: 1;
-      }
+export const Title = styled.h3`
+  display: flex;
+  height: 100%;
+  align-items: center;
+  font-size: 23px;
+  max-lines: 1;
+  padding-right: 30px;
+  margin-right: 30px;
+  border-right: 1px solid #ddd;
+`
 
-      small {
-        font-size: 13px;
-        margin-top: 7px;
-        display: flex;
-        align-items: center;
-      }
-    }
+export const Description = styled.p`
+  display: flex;
+  height: 100%;
+  align-items: center;
+  max-lines: 4;
+  padding-right: 30px;
+  margin-right: 30px;
+`
 
-    &:nth-of-type(2) {
-      width: 50%;
-      max-lines: 4;
-      padding-right: 30px;
-      margin-right: 30px;
-      border-right: 1px solid #ddd;
-    }
+export const User = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 
-    &:nth-of-type(3) {
-      strong {
-        display: flex;
-        align-items: center;
-      }
-    }
+  img {
+    border-radius: 50%;
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  strong {
+    display: flex;
+    align-items: center;
   }
 `

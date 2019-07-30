@@ -25,7 +25,9 @@ function Dashboard() {
 
   return (
     <Container>
-      <h1>MeetUps on {format(new Date(), "do 'of' MMMM")}</h1>
+      <h1>
+        Meet-ups today, <span>{format(new Date(), "do 'of' MMMM")}</span>
+      </h1>
       <Meetups>
         {meetups.map(meetup => (
           <MeetUp meetup={meetup} />
