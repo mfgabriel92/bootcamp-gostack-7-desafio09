@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
 `
 
 export const Container = styled.div`
+  padding: 50px 0;
   max-width: 1280px;
   margin: 0 auto;
   height: 100%;

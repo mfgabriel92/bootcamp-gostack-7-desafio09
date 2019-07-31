@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Input } from '@rocketseat/unform'
+import { Textarea } from '@rocketseat/unform'
 import { Container } from './styles'
 
-function BaseInput({
+function BaseTextarea({
   label,
   icon: Icon,
   iconSize,
@@ -17,13 +17,13 @@ function BaseInput({
       {label && <label htmlFor={name}>{label}</label>}
       <Container>
         {Icon && <Icon size={iconSize} color={iconColor} />}
-        <Input id={name} name={name} type={type} placeholder={placeholder} />
+        <Textarea id={name} name={name} type={type} placeholder={placeholder} />
       </Container>
     </>
   )
 }
 
-BaseInput.propTypes = {
+BaseTextarea.propTypes = {
   label: PropTypes.string,
   icon: PropTypes.any,
   iconSize: PropTypes.number,
@@ -33,7 +33,7 @@ BaseInput.propTypes = {
   placeholder: PropTypes.string,
 }
 
-BaseInput.defaultProps = {
+BaseTextarea.defaultProps = {
   label: null,
   icon: null,
   iconSize: 20,
@@ -42,4 +42,4 @@ BaseInput.defaultProps = {
   placeholder: '',
 }
 
-export default BaseInput
+export default BaseTextarea

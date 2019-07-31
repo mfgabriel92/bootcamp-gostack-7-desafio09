@@ -13,6 +13,7 @@ const rotate = keyframes`
 export const Button = styled.button.attrs(props => ({
   disabled: props.isLoading,
 }))`
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;

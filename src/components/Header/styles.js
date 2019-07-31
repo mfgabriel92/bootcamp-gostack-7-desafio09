@@ -32,6 +32,7 @@ export const Container = styled.div`
 
     a {
       margin-right: 20px;
+      font-weight: bold;
     }
   }
 `
