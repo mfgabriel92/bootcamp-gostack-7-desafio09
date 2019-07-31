@@ -26,6 +26,14 @@ export const Container = styled.div`
       opacity: 0.7;
     }
   }
+
+  > div {
+    display: flex;
+
+    a {
+      margin-right: 20px;
+    }
+  }
 `
 
 export const User = styled.div`
@@ -56,6 +64,7 @@ export const User = styled.div`
 
 export const Menu = styled.ul`
   position: absolute;
+  z-index: 10;
   right: 0;
   width: 250px;
   height: 100px;

@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components'
+import { darken, lighten } from 'polished'
 
 const rotate = keyframes`
   from {
@@ -21,7 +22,7 @@ export const Button = styled.button.attrs(props => ({
   border: 0;
   color: #fff;
   margin-bottom: 15px;
-  transition: opacity 0.2s;
+  transition: background 0.2s;
 
   svg {
     margin-right: 10px;
@@ -36,10 +37,10 @@ export const Button = styled.button.attrs(props => ({
     `}
 
   &:hover {
-    opacity: 0.8;
+    background: ${props => darken(0.1, props.bgColor)};
   }
 
   &:disabled {
-    opacity: 0.3;
+    background: ${props => lighten(0.25, props.bgColor)};
   }
 `
