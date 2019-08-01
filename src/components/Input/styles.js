@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const Wrapper = styled.div`
+  background: transparent;
+`
+
 export const Container = styled.div`
   border: 0;
   height: 44px;
@@ -8,6 +12,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  background: #fff;
 
   svg {
     margin-right: 15px;

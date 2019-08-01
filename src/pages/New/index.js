@@ -5,10 +5,12 @@ import {
   FaPencilAlt,
   FaCheckSquare,
   FaEraser,
+  FaMapMarkedAlt,
 } from 'react-icons/fa'
-import { Container, Buttons } from './styles'
+import { Container, DateLocation, Buttons } from './styles'
 import Input from '../../components/Input'
 import Textarea from '../../components/Textarea'
+import DateInput from '../../components/DateInput'
 import Button from '../../components/Button'
 
 function New() {
@@ -34,6 +36,17 @@ function New() {
           name="description"
           placeholder="Description of the event"
         />
+        <DateLocation>
+          <DateInput label="Date *" name="date" />
+          <Input
+            label="Location *"
+            icon={FaMapMarkedAlt}
+            iconSize={18}
+            iconColor="#171618"
+            name="location"
+            placeholder="Specify the location"
+          />
+        </DateLocation>
         <Buttons>
           <Button
             icon={FaEraser}
@@ -46,7 +59,7 @@ function New() {
             icon={FaCheckSquare}
             iconSize={18}
             text="Create Event"
-            bgColor="#cb4949"
+            bgColor="#171618"
           />
         </Buttons>
       </Form>

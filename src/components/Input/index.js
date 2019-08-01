@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Input } from '@rocketseat/unform'
-import { Container } from './styles'
+import { Wrapper, Container } from './styles'
 
 function BaseInput({
   label,
@@ -13,13 +13,13 @@ function BaseInput({
   placeholder,
 }) {
   return (
-    <>
+    <Wrapper>
       {label && <label htmlFor={name}>{label}</label>}
       <Container>
         {Icon && <Icon size={iconSize} color={iconColor} />}
         <Input id={name} name={name} type={type} placeholder={placeholder} />
       </Container>
-    </>
+    </Wrapper>
   )
 }
 

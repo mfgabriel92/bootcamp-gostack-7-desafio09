@@ -14,9 +14,12 @@ export const Container = styled.div`
   }
 `
 
-export const Meetups = styled.div`
+export const Meetups = styled.ul`
+  width: 896px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px 0;
 `

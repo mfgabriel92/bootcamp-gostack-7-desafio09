@@ -20,7 +20,7 @@ export const Container = styled.div`
     position: relative;
     box-shadow: 5px 5px 4px -5px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(203, 73, 73, 0.2);
-    background: #171618;
+    background: #cb4949;
     padding: 20px 30px;
     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
 
@@ -32,8 +32,6 @@ export const Container = styled.div`
     }
 
     div {
-      background: #fff;
-
       input,
       textarea {
         color: #171618;
@@ -48,6 +46,18 @@ export const Container = styled.div`
       width: 100%;
       min-height: 100px;
       padding-top: 10px;
+    }
+  }
+`
+
+export const DateLocation = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background: inherit !important;
+
+  div {
+    &:nth-of-type(2) {
+      flex-grow: 1;
     }
   }
 `

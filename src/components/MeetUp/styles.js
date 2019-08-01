@@ -1,79 +1,85 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  margin-top: 30px;
-  width: 920px;
+export const Container = styled.li`
+  display: flex;
+  flex-direction: column;
   background: #fff;
-  position: relative;
-  border-radius: 12px;
-  box-shadow: 5px 5px 4px -5px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(203, 73, 73, 0.2);
+  border-bottom: 3px solid #cb4949;
+  box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
+  opacity: ${props => (props.isPast ? 0.2 : 1)};
+  transition: all 0.3s;
 
-  > strong {
-    position: absolute;
-    right: 5px;
-    top: -25px;
-    background: #cb4949;
-    color: #fff;
-    padding: 7px 14px;
-    display: flex;
-    border-radius: 50px;
-
-    svg {
-      margin-right: 10px;
-    }
+  &:hover {
+    transform: scale(1.02, 1.02);
+    box-shadow: 1px 0px 15px 5px rgba(0, 0, 0, 0.06);
   }
 `
 
+export const Banner = styled.img`
+  background: #eee;
+  height: 256px;
+`
+
 export const Info = styled.div`
-  padding: 25px;
-  color: #7e7488;
+  padding: 20px 0;
+  border-bottom: 1px solid #eaeaea;
+  margin: 0 20px;
+`
+
+export const Title = styled.h2`
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+`
+
+export const Location = styled.p`
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #999;
   display: flex;
   align-items: center;
 
   svg {
     margin-right: 7px;
   }
-
-  div {
-    height: 100%;
-  }
-`
-
-export const Title = styled.h3`
-  display: flex;
-  height: 100%;
-  align-items: center;
-  font-size: 23px;
-  max-lines: 1;
-  padding-right: 30px;
-  margin-right: 30px;
-  border-right: 1px solid #ddd;
 `
 
 export const Description = styled.p`
-  display: flex;
-  height: 100%;
-  align-items: center;
-  max-lines: 4;
-  padding-right: 30px;
-  margin-right: 30px;
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+  color: #555;
+  margin-top: 30px;
+`
+
+export const Date = styled.p`
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-top: 20px;
+  font-weight: 500;
+
+  svg {
+    margin-right: 7px;
+  }
 `
 
 export const User = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  margin-left: auto;
+  justify-content: flex-end;
+  padding: 10px 20px;
 
   img {
+    width: 25px;
     border-radius: 50%;
-    width: 30px;
-    margin-right: 10px;
   }
 
-  strong {
-    display: flex;
-    align-items: center;
+  p {
+    font-size: 12px;
+    margin-left: 10px;
   }
 `
