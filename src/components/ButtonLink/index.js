@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from './styles'
 
-function ButtonLink({ to, bgColor, icon: Icon, iconSize, iconColor, text }) {
+function ButtonLink({ to, bgcolor, icon: Icon, iconSize, iconColor, text }) {
   return (
-    <Button to={to} bgColor={bgColor}>
+    <Button to={to} bgcolor={bgcolor}>
       {Icon && <Icon size={iconSize} color={iconColor} />}
       {text}
     </Button>
@@ -13,7 +13,7 @@ function ButtonLink({ to, bgColor, icon: Icon, iconSize, iconColor, text }) {
 
 ButtonLink.propTypes = {
   to: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
+  bgcolor: PropTypes.string.isRequired,
   icon: PropTypes.any,
   iconSize: PropTypes.number,
   iconColor: PropTypes.string,

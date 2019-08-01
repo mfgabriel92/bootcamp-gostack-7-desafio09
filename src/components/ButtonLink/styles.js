@@ -8,7 +8,7 @@ export const Button = styled(Link)`
   color: #fff;
   align-items: center;
   display: flex;
-  background: ${props => props.bgColor};
+  background: ${props => props.bgcolor};
   transition: background 0.2s;
 
   svg {
@@ -16,6 +16,6 @@ export const Button = styled(Link)`
   }
 
   &:hover {
-    background: ${props => lighten(0.1, props.bgColor)};
+    background: ${props => lighten(0.1, props.bgcolor)};
   }
 `

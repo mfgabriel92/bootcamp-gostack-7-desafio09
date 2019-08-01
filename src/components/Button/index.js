@@ -9,11 +9,11 @@ function BaseButton({
   iconColor,
   text,
   type,
-  bgColor,
+  bgcolor,
   isLoading,
 }) {
   return (
-    <Button type={type} bgColor={bgColor} isLoading={isLoading}>
+    <Button type={type} bgcolor={bgcolor} isLoading={isLoading}>
       {Icon && !isLoading && <Icon size={iconSize} color={iconColor} />}
       {isLoading ? <FaSpinner /> : text}
     </Button>
@@ -26,7 +26,7 @@ BaseButton.propTypes = {
   iconColor: PropTypes.string,
   text: PropTypes.string.isRequired,
   type: PropTypes.string,
-  bgColor: PropTypes.string.isRequired,
+  bgcolor: PropTypes.string.isRequired,
   isLoading: PropTypes.bool,
 }
 

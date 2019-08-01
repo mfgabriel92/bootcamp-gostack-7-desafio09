@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { FaHome } from 'react-icons/fa'
 import { format, parseISO } from 'date-fns'
@@ -16,6 +16,11 @@ import noBanner from '../../assets/no-banner.png'
 import noImage from '../../assets/no-user.png'
 
 function MeetUp({ meetup }) {
+  const formattedDate = useMemo(
+    () => format(parseISO(meetup.date), "MMMM do, yyyy ' | ' h:mm a"),
+    [meetup.date]
+  )
+
   return (
     <Container isPast={meetup.past}>
       <Banner
@@ -23,14 +28,14 @@ function MeetUp({ meetup }) {
         alt={meetup.title}
       />
       <Info>
-        <Title>{meetup.title}</Title>
+        <Title>{meetup.title.substring(0, 25)}</Title>
         <Location>
           <FaHome size={16} /> {meetup.location}
         </Location>
         <Description>
           &quot;{meetup.description.substring(0, 128)}&quot;
         </Description>
-        <Date>{format(parseISO(meetup.date), "MMMM do ' | ' HH:mm")}</Date>
+        <Date>{formattedDate}</Date>
       </Info>
       <User>
         <img

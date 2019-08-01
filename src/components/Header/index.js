@@ -23,7 +23,7 @@ function Header() {
             icon={FaPlusSquare}
             iconSize={18}
             text="New Event"
-            bgColor="#171618"
+            bgcolor="#171618"
           />
           <User onClick={() => setShowing(!showing)}>
             <strong>

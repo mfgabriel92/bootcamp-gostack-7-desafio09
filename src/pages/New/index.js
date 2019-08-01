@@ -53,13 +53,13 @@ function New() {
             iconSize={18}
             iconColor="#fff"
             text="Clear Form"
-            bgColor="#cecece"
+            bgcolor="#cecece"
           />
           <Button
             icon={FaCheckSquare}
             iconSize={18}
             text="Create Event"
-            bgColor="#171618"
+            bgcolor="#171618"
           />
         </Buttons>
       </Form>

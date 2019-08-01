@@ -17,7 +17,7 @@ export const Button = styled.button.attrs(props => ({
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${props => props.bgColor};
+  background: ${props => props.bgcolor};
   height: 44px;
   font-weight: bold;
   border: 0;
@@ -38,10 +38,10 @@ export const Button = styled.button.attrs(props => ({
     `}
 
   &:hover {
-    background: ${props => darken(0.1, props.bgColor)};
+    background: ${props => darken(0.1, props.bgcolor)};
   }
 
   &:disabled {
-    background: ${props => lighten(0.25, props.bgColor)};
+    background: ${props => lighten(0.25, props.bgcolor)};
   }
 `
