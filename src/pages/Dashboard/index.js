@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import { format, addDays, subDays } from 'date-fns'
+import { format, addDays, subDays, isToday } from 'date-fns'
 import api from '../../services/api'
 import MeetUp from '../../components/MeetUp'
 import { Container, Meetups } from './styles'
@@ -12,13 +12,6 @@ function Dashboard() {
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
   const formattedDate = useMemo(() => format(date, "do 'of' MMMM"), [date])
-
-  function decreaseDate() {
-    setDate(subDays(date, 1))
-  }
-  function increaseDate() {
-    setDate(addDays(date, 1))
-  }
 
   useEffect(() => {
     setIsLoading(true)
@@ -37,22 +30,50 @@ function Dashboard() {
     fetchMeetups()
   }, [page, date])
 
+  function decreaseDate() {
+    setDate(subDays(date, 1))
+  }
+  function increaseDate() {
+    setDate(addDays(date, 1))
+  }
+
+  function goToToday() {
+    setDate(new Date())
+  }
+
+  function renderEvents() {
+    if (isLoading) {
+      return <LoadingPlaceholder />
+    }
+
+    if (!isLoading && meetups.length === 0) {
+      return <h4>No events for {!isToday(date) ? 'that day' : 'today'}</h4>
+    }
+
+    return (
+      <Meetups>
+        {meetups.map(meetup => (
+          <MeetUp key={meetup.id} meetup={meetup} />
+        ))}
+      </Meetups>
+    )
+  }
+
   return (
     <Container>
       <h1>
         <FaChevronLeft size={28} color="#171618" onClick={decreaseDate} />
-        Meet-ups today, <span>{formattedDate}</span>
+        Meet-ups on the <span>{formattedDate}</span>
         <FaChevronRight size={28} color="#171618" onClick={increaseDate} />
       </h1>
-      {isLoading ? (
-        <LoadingPlaceholder />
-      ) : (
-        <Meetups>
-          {meetups.map(meetup => (
-            <MeetUp key={meetup.id} meetup={meetup} />
-          ))}
-        </Meetups>
-      )}
+      <button
+        type="button"
+        onClick={() => goToToday()}
+        disabled={isToday(date)}
+      >
+        Today
+      </button>
+      {renderEvents()}
     </Container>
   )
 }

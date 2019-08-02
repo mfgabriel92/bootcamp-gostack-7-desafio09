@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { darken } from 'polished'
 
 export const Container = styled.li`
   display: flex;
@@ -6,13 +7,18 @@ export const Container = styled.li`
   background: #fff;
   border-bottom: 3px solid #cb4949;
   box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
-  opacity: ${props => (props.isPast ? 0.2 : 1)};
   transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 
-  &:hover {
-    transform: scale(1.02, 1.02);
-    box-shadow: 1px 0px 15px 5px rgba(0, 0, 0, 0.06);
-  }
+  ${props =>
+    !props.isPast &&
+    css`
+      &:hover {
+        transform: scale(1.02, 1.02);
+        box-shadow: 1px 0px 15px 5px rgba(0, 0, 0, 0.06);
+      }
+    `}
 `
 
 export const Banner = styled.img`
@@ -82,4 +88,37 @@ export const User = styled.div`
     font-size: 12px;
     margin-left: 10px;
   }
+`
+
+export const Ribbon = styled.div`
+  top: -10px;
+  right: -10px;
+  overflow: hidden;
+
+  &&::before,
+  &&::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid ${darken(0.1, '#cb4949')};
+    border-top-color: transparent;
+    border-right-color: transparent;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  top: 11px;
+  right: -45px;
+  position: absolute;
+  width: 150px;
+  padding: 10px 0px;
+  background-color: #cb4949;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+  transform: rotate(45deg);
 `

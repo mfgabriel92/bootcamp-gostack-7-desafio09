@@ -11,6 +11,7 @@ import {
   Description,
   Date,
   User,
+  Ribbon,
 } from './styles'
 import noBanner from '../../assets/no-banner.png'
 import noImage from '../../assets/no-user.png'
@@ -23,6 +24,7 @@ function MeetUp({ meetup }) {
 
   return (
     <Container isPast={meetup.past}>
+      {meetup.past && <Ribbon>Done</Ribbon>}
       <Banner
         src={meetup.banner ? meetup.banner.path : noBanner}
         alt={meetup.title}

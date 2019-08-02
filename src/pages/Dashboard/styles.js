@@ -2,14 +2,16 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   color: #171618;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h1 {
     display: flex;
     align-items: center;
-    justify-content: center;
     letter-spacing: 1.1px;
     font-weight: 100;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     svg {
       cursor: pointer;
@@ -32,6 +34,18 @@ export const Container = styled.div`
     span {
       font-weight: bold;
       margin-left: 7px;
+    }
+  }
+
+  button {
+    margin-bottom: 50px;
+    background: transparent;
+    border: 0;
+    transition: all 0.2s;
+
+    &:hover {
+      color: #cb4949 !important;
+      transform: scale(1.15, 1.15);
     }
   }
 `
