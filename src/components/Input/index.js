@@ -8,6 +8,7 @@ function BaseInput({
   icon: Icon,
   iconSize,
   iconColor,
+  borderColor,
   name,
   type,
   placeholder,
@@ -15,7 +16,7 @@ function BaseInput({
   return (
     <Wrapper>
       {label && <label htmlFor={name}>{label}</label>}
-      <Container>
+      <Container bordercolor={borderColor}>
         {Icon && <Icon size={iconSize} color={iconColor} />}
         <Input id={name} name={name} type={type} placeholder={placeholder} />
       </Container>
@@ -28,6 +29,7 @@ BaseInput.propTypes = {
   icon: PropTypes.any,
   iconSize: PropTypes.number,
   iconColor: PropTypes.string,
+  borderColor: PropTypes.string,
   name: PropTypes.string.isRequired,
   type: PropTypes.any,
   placeholder: PropTypes.string,
@@ -38,6 +40,7 @@ BaseInput.defaultProps = {
   icon: null,
   iconSize: 20,
   iconColor: '#FFF',
+  borderColor: '#FFF',
   type: 'text',
   placeholder: '',
 }

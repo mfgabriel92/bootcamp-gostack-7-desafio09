@@ -18,11 +18,12 @@ export const Container = styled.div`
     margin-top: 30px;
     width: 920px;
     position: relative;
-    box-shadow: 5px 5px 4px -5px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(203, 73, 73, 0.2);
-    background: #cb4949;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-bottom: 3px solid #cb4949;
+    box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
     padding: 20px 30px;
-    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
 
     label {
       font-weight: bold;
@@ -67,6 +68,7 @@ export const Buttons = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
+  margin-top: 30px;
 
   button {
     margin: 0;

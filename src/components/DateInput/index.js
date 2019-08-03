@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import DatePicker from 'react-date-picker'
 import { Wrapper, Container } from './styles'
 
-function DateInput({ label, name }) {
+function DateInput({ label, name, borderColor }) {
   return (
     <Wrapper>
       {label && <label htmlFor={name}>{label}</label>}
-      <Container>
+      <Container bordercolor={borderColor}>
         <DatePicker name="name" />
       </Container>
     </Wrapper>
@@ -16,11 +16,13 @@ function DateInput({ label, name }) {
 
 DateInput.propTypes = {
   label: PropTypes.string,
+  borderColor: PropTypes.string,
   name: PropTypes.string.isRequired,
 }
 
 DateInput.defaultProps = {
   label: null,
+  borderColor: '#FFF',
 }
 
 export default DateInput
