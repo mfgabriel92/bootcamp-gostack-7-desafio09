@@ -29,7 +29,7 @@ export const Container = styled.div`
       font-weight: bold;
       display: block;
       margin-bottom: 7px;
-      color: #fff;
+      color: #171618;
     }
 
     div {

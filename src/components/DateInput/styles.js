@@ -12,12 +12,12 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   border: 1px solid ${props => lighten(0.3, props.bordercolor)};
 
-  .react-date-picker,
-  .react-date-picker__wrapper {
+  .react-datetime-picker,
+  .react-datetime-picker__wrapper {
     width: 100%;
     border: none;
   }
-  .react-date-picker__wrapper {
+  .react-datetime-picker__wrapper {
     height: 44px;
     bottom: 0;
     background: #fff;

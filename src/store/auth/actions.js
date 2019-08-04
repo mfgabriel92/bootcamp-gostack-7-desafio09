@@ -1,7 +1,6 @@
 import types from './types'
 
 const signIn = (email, password) => {
-  console.tron.log(email, password)
   return {
     type: types.SIGN_IN,
     payload: { email, password },
