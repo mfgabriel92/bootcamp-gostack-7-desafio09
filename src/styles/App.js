@@ -33,6 +33,16 @@ export default createGlobalStyle`
     list-style: none;
   }
 
+  h1 {
+    letter-spacing: 1.1px;
+    font-weight: 100;
+    
+    span {
+      font-weight: bold;
+      margin-left: 7px;
+    }
+  }
+
   button {
     cursor: pointer;
   }

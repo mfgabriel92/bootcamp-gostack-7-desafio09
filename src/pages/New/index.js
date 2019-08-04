@@ -37,7 +37,7 @@ function New() {
   return (
     <Container>
       <h1>
-        New <span>Event</span>
+        New <span>meet-up event</span>
       </h1>
       <Form onSubmit={validateForm}>
         <Input

@@ -9,4 +9,8 @@ export const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   height: 100%;
+  color: #171618;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `

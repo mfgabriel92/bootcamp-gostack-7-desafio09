@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { FaUser, FaDoorOpen, FaPlusSquare } from 'react-icons/fa'
+import {
+  FaUser,
+  FaCalendarCheck,
+  FaDoorOpen,
+  FaPlusSquare,
+} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import ButtonLink from '../ButtonLink'
 import { Wrapper, Container, User, Menu, Separator } from './styles'
@@ -34,6 +39,11 @@ function Header() {
               <li>
                 <Link to="/profile">
                   <FaUser size={18} color="#fff" /> Profile
+                </Link>
+              </li>
+              <li>
+                <Link to="/my-meetups">
+                  <FaCalendarCheck size={18} color="#fff" /> My Meetups
                 </Link>
               </li>
               <Separator />

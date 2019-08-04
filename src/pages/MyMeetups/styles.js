@@ -8,37 +8,9 @@ export const Container = styled.div`
   h1 {
     display: flex;
     align-items: center;
+    letter-spacing: 1.1px;
+    font-weight: 100;
     margin-bottom: 20px;
-
-    svg {
-      cursor: pointer;
-      transition: all 0.2s;
-
-      &:hover {
-        color: #cb4949 !important;
-        transform: scale(1.15, 1.15);
-      }
-
-      &:nth-of-type(1) {
-        margin-right: 15px;
-      }
-
-      &:nth-of-type(2) {
-        margin-left: 15px;
-      }
-    }
-  }
-
-  button {
-    margin-bottom: 50px;
-    background: transparent;
-    border: 0;
-    transition: all 0.2s;
-
-    &:hover {
-      color: #cb4949 !important;
-      transform: scale(1.15, 1.15);
-    }
   }
 `
 
@@ -46,16 +18,28 @@ export const Meetups = styled.ul`
   width: 896px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   padding: 20px 0;
-`
 
+  li {
+    > img {
+      height: 162px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  div {
+  }
+`
 export const LoadingWrapper = styled(Meetups)`
   display: flex;
 
   .ph-item {
-    width: 512px;
+    width: 278px;
     padding: 0;
 
     div {
@@ -63,7 +47,7 @@ export const LoadingWrapper = styled(Meetups)`
     }
 
     .ph-picture {
-      height: 256px;
+      height: 168px;
     }
 
     .ph-row {

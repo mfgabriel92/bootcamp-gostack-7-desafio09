@@ -30,6 +30,8 @@ export const Info = styled.div`
   padding: 20px 0;
   border-bottom: 1px solid #eaeaea;
   margin: 0 20px;
+  min-height: 238px;
+  justify-content: space-between;
 `
 
 export const Title = styled.h2`
@@ -73,7 +75,6 @@ export const Date = styled.p`
 `
 
 export const User = styled.div`
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;

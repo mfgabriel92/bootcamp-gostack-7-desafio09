@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  color: #171618;
-
   h1 {
     text-align: center;
     letter-spacing: 1.1px;
@@ -29,6 +27,7 @@ export const Container = styled.div`
       font-weight: bold;
       display: block;
       margin-bottom: 7px;
+      margin-top: 12px;
       color: #171618;
     }
 

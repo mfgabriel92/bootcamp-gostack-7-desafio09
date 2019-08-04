@@ -68,7 +68,6 @@ export const Menu = styled.ul`
   z-index: 10;
   right: 0;
   width: 250px;
-  height: 100px;
   background: #171618;
   top: 90px;
   display: ${props => !props.showing && 'none'};

@@ -12,7 +12,6 @@ function DateInput({ label, name, borderColor, value, onChange }) {
           name="name"
           minDate={new Date()}
           format="yyyy-MM-dd HH:mm:00"
-          amPmAriaLabel="Select AM/PM"
           value={value}
           onChange={onChange}
         />
