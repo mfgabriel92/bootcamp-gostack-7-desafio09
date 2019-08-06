@@ -1,12 +1,13 @@
 import types from './types'
 
-const createMeetup = (title, description, date, location) => ({
+const createMeetup = (title, description, date, location, banner) => ({
   type: types.CREATE_MEETUP,
   payload: {
     title,
     description,
     date,
     location,
+    banner,
   },
 })
 

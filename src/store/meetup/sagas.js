@@ -7,7 +7,7 @@ import types from './types'
 
 export function* createMeetup({ payload }) {
   try {
-    const { title, description, date, location } = payload
+    const { title, description, date, location, banner } = payload
     const { data } = yield call(api.post, '/meetups', {
       title,
       description,
@@ -16,6 +16,13 @@ export function* createMeetup({ payload }) {
     })
 
     yield put(createMeetupSuccess())
+
+    if (banner) {
+      const image = new FormData()
+      image.append('file', banner)
+
+      yield call(api.put, `/meetups/${data.meetup.id}/banner`, image)
+    }
 
     toast.success(`Meetup ${data.meetup.title} successfully created`)
     history.push('/dashboard')

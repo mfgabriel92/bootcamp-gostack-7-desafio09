@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { parseISO, format } from 'date-fns'
 import { Form } from '@rocketseat/unform'
 import {
   FaCalendarAlt,
@@ -12,6 +11,7 @@ import {
 import { toast } from 'react-toastify'
 import { Container, DateLocation, Buttons } from './styles'
 import { createMeetup } from '../../store/meetup/actions'
+import Dropzone from '../../components/Dropzone'
 import Input from '../../components/Input'
 import Textarea from '../../components/Textarea'
 import DateInput from '../../components/DateInput'
@@ -21,6 +21,7 @@ import schema from '../../utils/validations/new'
 
 function New() {
   const [date, setDate] = useState(new Date())
+  const [banner, setBanner] = useState([])
   const { isLoading } = useSelector(state => state.meetup)
   const dispatch = useDispatch()
 
@@ -28,7 +29,7 @@ function New() {
     try {
       await schema.validate(data, { abortEarly: false })
       const { title, description, location } = data
-      dispatch(createMeetup(title, description, date, location))
+      dispatch(createMeetup(title, description, date, location, banner[0]))
     } catch ({ errors }) {
       toast.error(<ErrorMessage errors={errors} />, { autoClose: 2000 })
     }
@@ -40,6 +41,8 @@ function New() {
         New <span>meet-up event</span>
       </h1>
       <Form onSubmit={validateForm}>
+        <Dropzone accept="image/*" onDropAccepted={setBanner} />
+
         <Input
           label="Event title *"
           icon={FaCalendarAlt}
