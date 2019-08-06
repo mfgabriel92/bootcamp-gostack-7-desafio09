@@ -25,10 +25,7 @@ function MeetUp({ meetup }) {
   return (
     <Container isPast={meetup.past}>
       {meetup.past && <Ribbon>Done</Ribbon>}
-      <Banner
-        src={meetup.banner ? meetup.banner.path : noBanner}
-        alt={meetup.title}
-      />
+      <Banner bgimage={meetup.banner ? meetup.banner.path : noBanner} />
       <Info>
         <Title>{meetup.title.substring(0, 25)}</Title>
         <Location>

@@ -21,9 +21,13 @@ export const Container = styled.li`
     `}
 `
 
-export const Banner = styled.img`
+export const Banner = styled.div`
   background: #eee;
   height: 256px;
+  background: url(${props => props.bgimage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 `
 
 export const Info = styled.div`
