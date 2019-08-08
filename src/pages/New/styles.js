@@ -18,26 +18,26 @@ export const Container = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    background: #fff;
-    border-bottom: 3px solid #cb4949;
+    background: #353f60;
     box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
     padding: 20px 30px;
+    border-radius: 4px;
 
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 7px;
       margin-top: 12px;
-      color: #171618;
+      color: #fcfcfc;
     }
 
     div {
       input,
       textarea {
-        color: #171618;
+        color: #fcfcfc;
 
         &::placeholder {
-          color: #171618;
+          color: #fcfcfc;
         }
       }
     }
@@ -53,7 +53,6 @@ export const Container = styled.div`
 export const DateLocation = styled.div`
   display: flex;
   justify-content: space-between;
-  background: inherit !important;
 
   div {
     &:nth-of-type(2) {
@@ -63,7 +62,6 @@ export const DateLocation = styled.div`
 `
 
 export const Buttons = styled.div`
-  background: inherit !important;
   display: flex;
   flex: 1;
   justify-content: space-between;

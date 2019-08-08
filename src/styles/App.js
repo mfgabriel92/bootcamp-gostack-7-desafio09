@@ -17,8 +17,8 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
-    height: 100%;
-    background: #fcfcfc;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #252d48, #131322);
   }
 
   body, input, textarea, button {

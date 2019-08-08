@@ -7,14 +7,15 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 100px;
-  color: #cb4949;
-  background: #f9f9f9;
+  color: orangered;
+  background: rgba(255, 255, 255, 0.15);
   margin-bottom: 15px;
   cursor: pointer;
   transition: all 0.2s;
+  border-radius: 4px;
 
   &:hover {
-    color: ${darken(0.05, '#cb4949')};
-    background: ${darken(0.01, '#f9f9f9')};
+    color: ${darken(0.05, 'orangered')};
+    background: rgba(255, 255, 255, 0.2);
   }
 `

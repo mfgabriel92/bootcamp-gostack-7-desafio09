@@ -1,76 +1,68 @@
 import styled from 'styled-components'
 import { darken, lighten } from 'polished'
 
-export const Wrapper = styled.header`
-  display: flex;
-  flex: 1;
-  align-items: center;
-  height: 72px;
-  background: #cb4949;
-  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.3);
-`
-
 export const Container = styled.div`
-  min-width: 1280px;
+  position: fixed;
+  background: linear-gradient(
+    135deg,
+    rgba(78, 101, 185, 0.1),
+    rgba(181, 188, 255, 0.04)
+  );
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
+  min-width: 80px;
   height: 100%;
-  margin: 0 auto;
   display: flex;
+  padding: 10px;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
   img {
-    width: 150px;
+    width: 50px;
     transition: opacity 0.2s;
 
     &:hover {
       opacity: 0.7;
     }
   }
+`
 
-  > div {
-    display: flex;
+export const Actions = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    a {
-      margin-right: 20px;
-      font-weight: bold;
+  a {
+    margin-bottom: 20px;
+    border-radius: 50%;
+
+    svg {
+      margin: 0;
     }
   }
 `
 
 export const User = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 10px;
   transition: background 0.2s;
   cursor: pointer;
   position: relative;
 
-  strong {
-    color: #fff;
-    font-size: 16px;
-    transition: background 0.2s;
-    margin-right: 15px;
-  }
-
   img {
     width: 40px;
     border-radius: 50%;
-  }
-
-  &:hover {
-    background: ${darken(0.07, '#cb4949')};
   }
 `
 
 export const Menu = styled.ul`
   position: absolute;
   z-index: 10;
-  right: 0;
+  left: 80px;
   width: 250px;
   background: #171618;
-  top: 90px;
+  bottom: 0;
   display: ${props => !props.showing && 'none'};
+  background: #353f60;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
 
   li {
     a {
@@ -80,6 +72,7 @@ export const Menu = styled.ul`
       align-items: center;
       padding: 15px;
       height: 100%;
+      margin: 0;
 
       svg {
         margin-right: 15px;
@@ -87,7 +80,7 @@ export const Menu = styled.ul`
     }
 
     &:hover {
-      background: ${lighten(0.1, '#171618')};
+      background: ${lighten(0.1, 'rgba(125, 143, 206, 0.17)')};
     }
   }
 
@@ -95,17 +88,17 @@ export const Menu = styled.ul`
     content: '';
     width: 0;
     height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid #171618;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #353f60;
     position: absolute;
-    right: 15px;
-    top: -15px;
+    left: -15px;
+    bottom: 10px;
   }
 `
 
 export const Separator = styled.li`
   height: 1px;
   margin: 0 15px;
-  background: #cb4949;
+  background: s;
 `

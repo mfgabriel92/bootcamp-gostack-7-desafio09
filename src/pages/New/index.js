@@ -47,8 +47,7 @@ function New() {
           label="Event title *"
           icon={FaCalendarAlt}
           iconSize={18}
-          iconColor="#cb4949"
-          borderColor="#cb4949"
+          iconColor="#fcfcfc"
           name="title"
           placeholder="Title of the event"
         />
@@ -56,8 +55,7 @@ function New() {
           label="Description *"
           icon={FaPencilAlt}
           iconSize={18}
-          iconColor="#cb4949"
-          borderColor="#cb4949"
+          iconColor="#fcfcfc"
           name="description"
           placeholder="Description of the event"
         />
@@ -65,7 +63,7 @@ function New() {
           <DateInput
             label="Date *"
             name="date"
-            borderColor="#cb4949"
+            borderColor="#fcfcfc"
             value={date}
             onChange={setDate}
           />
@@ -73,8 +71,7 @@ function New() {
             label="Location *"
             icon={FaMapMarkedAlt}
             iconSize={18}
-            iconColor="#cb4949"
-            borderColor="#cb4949"
+            iconColor="#fcfcfc"
             name="location"
             placeholder="Specify the location"
           />
@@ -84,14 +81,14 @@ function New() {
             icon={FaEraser}
             iconSize={18}
             text="Clear Form"
-            bgcolor="#cecece"
+            bgcolor="rgba(255, 255, 255, 0.4)"
             isLoading={isLoading}
           />
           <Button
             icon={FaCheckSquare}
             iconSize={18}
             text="Create Event"
-            bgcolor="#cb4949"
+            bgcolor="#ff3e00"
             isLoading={isLoading}
           />
         </Buttons>

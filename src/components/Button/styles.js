@@ -24,6 +24,7 @@ export const Button = styled.button.attrs(props => ({
   color: #fff;
   margin-bottom: 15px;
   transition: background 0.2s;
+  border-radius: 4px;
 
   svg {
     margin-right: 10px;

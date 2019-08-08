@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  height: 100%;
-  background: linear-gradient(90deg, #cb4949 70%, #171618 30%);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,12 +9,13 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-  background: #171618;
+  background: #353f60;
   padding: 20px 30px;
   width: 100%;
   max-width: 415px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
+  border-radius: 4px;
 
   form {
     display: flex;
@@ -27,19 +27,16 @@ export const Content = styled.div`
     }
 
     div {
-      background: #fff;
-
       input {
-        color: #171618;
+        color: #fcfcfc;
 
         &::placeholder {
-          color: #171618;
+          color: #fcfcfc;
         }
       }
     }
 
     a {
-      color: #fff;
       font-size: 13px;
       opacity: 0.8;
 

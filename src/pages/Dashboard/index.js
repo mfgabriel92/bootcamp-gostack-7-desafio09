@@ -62,9 +62,9 @@ function Dashboard() {
   return (
     <Container>
       <h1>
-        <FaChevronLeft size={28} color="#171618" onClick={decreaseDate} />
+        <FaChevronLeft size={28} color="#fcfcfc" onClick={decreaseDate} />
         Meet-ups on the <span>{formattedDate}</span>
-        <FaChevronRight size={28} color="#171618" onClick={increaseDate} />
+        <FaChevronRight size={28} color="#fcfcfc" onClick={increaseDate} />
       </h1>
       <button
         type="button"

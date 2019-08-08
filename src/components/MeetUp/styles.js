@@ -4,12 +4,13 @@ import { darken } from 'polished'
 export const Container = styled.li`
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border-bottom: 3px solid #cb4949;
-  box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
+  background: #353f60;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  color: #fcfcfc;
+  border-radius: 4px;
 
   ${props =>
     !props.isPast &&
@@ -28,6 +29,7 @@ export const Banner = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  opacity: 0.5;
 `
 
 export const Info = styled.div`
@@ -49,7 +51,6 @@ export const Location = styled.p`
   display: block;
   margin-top: 10px;
   font-size: 13px;
-  color: #999;
   display: flex;
   align-items: center;
 
@@ -62,14 +63,12 @@ export const Description = styled.p`
   display: block;
   font-style: italic;
   font-size: 14px;
-  color: #555;
   margin-top: 30px;
 `
 
 export const Date = styled.p`
   display: block;
   font-size: 14px;
-  color: #555;
   margin-top: 20px;
   font-weight: 500;
 
@@ -106,7 +105,7 @@ export const Ribbon = styled.div`
     z-index: -1;
     content: '';
     display: block;
-    border: 5px solid ${darken(0.1, '#cb4949')};
+    border: 5px solid ${darken(0.1, 'orangered')};
     border-top-color: transparent;
     border-right-color: transparent;
     top: 0;
@@ -120,7 +119,7 @@ export const Ribbon = styled.div`
   position: absolute;
   width: 150px;
   padding: 10px 0px;
-  background-color: #cb4949;
+  background-color: orangered;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;

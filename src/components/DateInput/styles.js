@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { lighten } from 'polished'
 
 export const Wrapper = styled.div`
   background: transparent;
@@ -10,16 +9,18 @@ export const Wrapper = styled.div`
 `
 
 export const Container = styled.div`
-  border: 1px solid ${props => lighten(0.3, props.bordercolor)};
-
+  .react-datetime-picker__wrapper {
+    padding-left: 10px;
+  }
   .react-datetime-picker,
   .react-datetime-picker__wrapper {
     width: 100%;
     border: none;
+    border-radius: 4px;
   }
   .react-datetime-picker__wrapper {
     height: 44px;
     bottom: 0;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.2);
   }
 `

@@ -33,7 +33,7 @@ function SignIn() {
         <Input
           icon={FaEnvelopeOpen}
           iconSize={18}
-          iconColor="#171618"
+          iconColor="#fcfcfc"
           name="email"
           type="email"
           placeholder="example@email.com"
@@ -41,7 +41,7 @@ function SignIn() {
         <Input
           icon={FaUnlockAlt}
           iconSize={18}
-          iconColor="#171618"
+          iconColor="#fcfcfc"
           name="password"
           type="password"
           placeholder="**********"

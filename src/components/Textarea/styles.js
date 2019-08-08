@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { lighten } from 'polished'
 
 export const Wrapper = styled.div`
   background: transparent;
@@ -11,8 +10,8 @@ export const Container = styled.div`
   margin: 0 0 10px;
   display: flex;
   flex-direction: row;
-  background: #fff;
-  border: 1px solid ${props => lighten(0.3, props.bordercolor)};
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 
   svg {
     margin-right: 15px;
