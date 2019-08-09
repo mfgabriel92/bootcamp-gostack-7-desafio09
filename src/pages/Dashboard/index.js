@@ -33,12 +33,17 @@ function Dashboard() {
   function decreaseDate() {
     setDate(subDays(date, 1))
   }
+
   function increaseDate() {
     setDate(addDays(date, 1))
   }
 
   function goToToday() {
     setDate(new Date())
+  }
+
+  async function handleCancelEvent(id) {
+    await api.delete(`/meetups/${id}`)
   }
 
   function renderEvents() {
@@ -53,7 +58,11 @@ function Dashboard() {
     return (
       <Meetups>
         {meetups.map(meetup => (
-          <MeetUp key={meetup.id} meetup={meetup} />
+          <MeetUp
+            key={meetup.id}
+            meetup={meetup}
+            onCancel={handleCancelEvent}
+          />
         ))}
       </Meetups>
     )

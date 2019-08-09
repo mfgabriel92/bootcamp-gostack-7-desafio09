@@ -1,9 +1,12 @@
 import React, { useMemo } from 'react'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { FaHome } from 'react-icons/fa'
+import { FaHome, FaPencilAlt, FaRegCalendarMinus } from 'react-icons/fa'
 import { format, parseISO } from 'date-fns'
 import {
   Container,
+  Actions,
   Banner,
   Info,
   Title,
@@ -16,7 +19,9 @@ import {
 import noBanner from '../../assets/no-banner.png'
 import noImage from '../../assets/no-user.png'
 
-function MeetUp({ size, meetup }) {
+function MeetUp({ size, meetup, onCancel }) {
+  const me = useSelector(state => state.user.me)
+
   const formattedDate = useMemo(
     () => format(parseISO(meetup.date), "MMMM do, yyyy ' | ' h:mm a"),
     [meetup.date]
@@ -24,6 +29,16 @@ function MeetUp({ size, meetup }) {
 
   return (
     <Container isPast={meetup.past}>
+      {me.id === meetup.user.id && !meetup.past && (
+        <Actions>
+          <button type="button">
+            <FaPencilAlt color="#fff" size={18} />
+          </button>
+          <button type="button" onClick={() => onCancel(meetup.id)}>
+            <FaRegCalendarMinus color="#fff" size={18} />
+          </button>
+        </Actions>
+      )}
       {meetup.past && <Ribbon>Done</Ribbon>}
       <Banner
         size={size}
@@ -55,6 +70,7 @@ function MeetUp({ size, meetup }) {
 MeetUp.propTypes = {
   size: PropTypes.string,
   meetup: PropTypes.shape().isRequired,
+  onCancel: PropTypes.func.isRequired,
 }
 
 MeetUp.defaultProps = {

@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
-const size = 'default'
-
 export const Container = styled.li`
   display: flex;
   flex-direction: column;
@@ -24,6 +22,28 @@ export const Container = styled.li`
     `}
 `
 
+export const Actions = styled.div`
+  position: absolute;
+  padding: 10px;
+  top: 5px;
+  right: 0px;
+
+  button {
+    background: #464e6a !important;
+    padding: 10px 10px 4px 10px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    box-shadow: 2px 2px 1px 0px #333;
+    margin-right: 5px;
+    border: none;
+
+    &:hover {
+      background: ${darken(0.1, '#464e6a')};
+      transform: scale(1.15, 1.15);
+    }
+  }
+`
+
 export const Banner = styled.div`
   height: ${props => (props.size === 'small' ? '168px' : '256px')};
   background: url(${props => props.bgimage});
@@ -34,7 +54,7 @@ export const Banner = styled.div`
 
 export const Info = styled.div`
   padding: 20px 0;
-  border-bottom: 1px solid #455179;
+  border-bottom: 1px solid #61677e;
   margin: 0 20px;
   min-height: 230px;
   justify-content: space-between;

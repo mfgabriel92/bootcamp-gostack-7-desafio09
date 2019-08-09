@@ -6,12 +6,16 @@ export const Container = styled.div`
   align-items: center;
 
   h1 {
+    span {
+      margin-left: 10px;
+    }
+
     svg {
       cursor: pointer;
       transition: all 0.2s;
 
       &:hover {
-        color: #cb4949 !important;
+        color: #6414f7 !important;
         transform: scale(1.15, 1.15);
       }
 
@@ -30,9 +34,9 @@ export const Container = styled.div`
     background: transparent;
     border: 0;
     transition: all 0.2s;
+    color: #fcfcfc;
 
     &:hover {
-      color: #cb4949 !important;
       transform: scale(1.15, 1.15);
     }
   }
