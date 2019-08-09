@@ -5,6 +5,7 @@ export const Container = styled.div`
     text-align: center;
     letter-spacing: 1.1px;
     font-weight: 100;
+    display: inherit;
 
     span {
       font-weight: bold;
@@ -13,15 +14,15 @@ export const Container = styled.div`
 
   form {
     margin: auto;
-    margin-top: 30px;
+    margin-top: 50px;
     width: 920px;
     position: relative;
     display: flex;
     flex-direction: column;
-    background: #353f60;
+    background: #464e6a;
     box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
-    padding: 20px 30px;
-    border-radius: 4px;
+    padding: 30px 40px;
+    border-radius: 8px;
 
     label {
       font-weight: bold;
@@ -31,21 +32,15 @@ export const Container = styled.div`
       color: #fcfcfc;
     }
 
-    div {
-      input,
-      textarea {
-        color: #fcfcfc;
-
-        &::placeholder {
-          color: #fcfcfc;
-        }
-      }
-    }
-
     textarea {
       width: 100%;
       min-height: 100px;
       padding-top: 10px;
+    }
+
+    button {
+      margin-top: 30px !important;
+      margin: 0;
     }
   }
 `
@@ -58,16 +53,5 @@ export const DateLocation = styled.div`
     &:nth-of-type(2) {
       flex-grow: 1;
     }
-  }
-`
-
-export const Buttons = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  margin-top: 30px;
-
-  button {
-    margin: 0;
   }
 `

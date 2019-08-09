@@ -5,11 +5,10 @@ import {
   FaCalendarAlt,
   FaPencilAlt,
   FaCheckSquare,
-  FaEraser,
   FaMapMarkedAlt,
 } from 'react-icons/fa'
 import { toast } from 'react-toastify'
-import { Container, DateLocation, Buttons } from './styles'
+import { Container, DateLocation } from './styles'
 import { createMeetup } from '../../store/meetup/actions'
 import Dropzone from '../../components/Dropzone'
 import Input from '../../components/Input'
@@ -76,22 +75,13 @@ function New() {
             placeholder="Specify the location"
           />
         </DateLocation>
-        <Buttons>
-          <Button
-            icon={FaEraser}
-            iconSize={18}
-            text="Clear Form"
-            bgcolor="rgba(255, 255, 255, 0.4)"
-            isLoading={isLoading}
-          />
-          <Button
-            icon={FaCheckSquare}
-            iconSize={18}
-            text="Create Event"
-            bgcolor="#ff3e00"
-            isLoading={isLoading}
-          />
-        </Buttons>
+        <Button
+          icon={FaCheckSquare}
+          iconSize={18}
+          text="Create Event"
+          bgcolor="#6414f7"
+          isLoading={isLoading}
+        />
       </Form>
     </Container>
   )

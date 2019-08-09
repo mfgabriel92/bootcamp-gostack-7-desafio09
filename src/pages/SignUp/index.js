@@ -69,7 +69,7 @@ function SignUp() {
           icon={FaPlusCircle}
           iconSize={18}
           text="Register"
-          bgcolor="#cb4949"
+          bgcolor="#6414f7"
         />
         <Link to="/">Have an account? Login now</Link>
       </Form>

@@ -1,13 +1,9 @@
 import styled from 'styled-components'
-import { darken, lighten } from 'polished'
+import { lighten } from 'polished'
 
 export const Container = styled.div`
   position: fixed;
-  background: linear-gradient(
-    135deg,
-    rgba(78, 101, 185, 0.1),
-    rgba(181, 188, 255, 0.04)
-  );
+  background: #464e6a;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
   min-width: 80px;
   height: 100%;
@@ -61,7 +57,7 @@ export const Menu = styled.ul`
   background: #171618;
   bottom: 0;
   display: ${props => !props.showing && 'none'};
-  background: #353f60;
+  background: #464e6a;
   box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
 
   li {
@@ -90,7 +86,7 @@ export const Menu = styled.ul`
     height: 0;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid #353f60;
+    border-right: 15px solid #464e6a;
     position: absolute;
     left: -15px;
     bottom: 10px;

@@ -18,13 +18,13 @@ export const Button = styled.button.attrs(props => ({
   justify-content: center;
   align-items: center;
   background: ${props => props.bgcolor};
-  height: 44px;
+  height: 48px;
   font-weight: bold;
   border: 0;
   color: #fff;
   margin-bottom: 15px;
   transition: background 0.2s;
-  border-radius: 4px;
+  border-radius: 8px;
 
   svg {
     margin-right: 10px;

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { darken } from 'polished'
 
 export const Container = styled.div`
   height: 250px;
@@ -7,15 +6,14 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 100px;
-  color: orangered;
+  color: rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.15);
   margin-bottom: 15px;
   cursor: pointer;
   transition: all 0.2s;
-  border-radius: 4px;
+  border-radius: 8px;
 
   &:hover {
-    color: ${darken(0.05, 'orangered')};
     background: rgba(255, 255, 255, 0.2);
   }
 `

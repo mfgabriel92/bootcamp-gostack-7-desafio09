@@ -53,12 +53,8 @@ export const LoadingWrapper = styled(Meetups)`
   .ph-item {
     width: 512px;
     padding: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(125, 143, 206, 0.17),
-      rgba(131, 139, 219, 0.14)
-    );
-    opacity: 0.1;
+    background: #464e6a;
+    border: 0;
 
     div {
       padding: 0;

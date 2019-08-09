@@ -13,6 +13,8 @@ function DateInput({ label, name, borderColor, value, onChange }) {
           minDate={new Date()}
           format="yyyy-MM-dd HH:mm:00"
           value={value}
+          calendarIcon={null}
+          clearIcon={null}
           onChange={onChange}
         />
       </Container>
@@ -24,7 +26,7 @@ DateInput.propTypes = {
   label: PropTypes.string,
   borderColor: PropTypes.string,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.any.isRequired,
   onChange: PropTypes.func.isRequired,
 }
 

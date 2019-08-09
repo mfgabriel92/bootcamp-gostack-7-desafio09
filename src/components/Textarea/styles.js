@@ -11,7 +11,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  border-radius: 8px;
 
   svg {
     margin-right: 15px;
@@ -25,5 +25,10 @@ export const Container = styled.div`
     font-weight: bold;
     flex: 1;
     height: 100%;
+    color: #fcfcfc;
+
+    &::placeholder {
+      color: #fcfcfc;
+    }
   }
 `

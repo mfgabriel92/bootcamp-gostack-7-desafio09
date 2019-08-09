@@ -16,7 +16,7 @@ import {
 import noBanner from '../../assets/no-banner.png'
 import noImage from '../../assets/no-user.png'
 
-function MeetUp({ meetup }) {
+function MeetUp({ size, meetup }) {
   const formattedDate = useMemo(
     () => format(parseISO(meetup.date), "MMMM do, yyyy ' | ' h:mm a"),
     [meetup.date]
@@ -25,7 +25,10 @@ function MeetUp({ meetup }) {
   return (
     <Container isPast={meetup.past}>
       {meetup.past && <Ribbon>Done</Ribbon>}
-      <Banner bgimage={meetup.banner ? meetup.banner.path : noBanner} />
+      <Banner
+        size={size}
+        bgimage={meetup.banner ? meetup.banner.path : noBanner}
+      />
       <Info>
         <Title>{meetup.title.substring(0, 25)}</Title>
         <Location>
@@ -50,7 +53,12 @@ function MeetUp({ meetup }) {
 }
 
 MeetUp.propTypes = {
+  size: PropTypes.string,
   meetup: PropTypes.shape().isRequired,
+}
+
+MeetUp.defaultProps = {
+  size: 'default',
 }
 
 export default MeetUp

@@ -6,13 +6,13 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   border: 0;
-  height: 44px;
+  height: 46px;
   padding: 0 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  border-radius: 8px;
 
   svg {
     margin-right: 15px;
@@ -24,5 +24,10 @@ export const Container = styled.div`
     font-weight: bold;
     flex: 1;
     height: 100%;
+    color: #fcfcfc;
+
+    &::placeholder {
+      color: #fcfcfc;
+    }
   }
 `

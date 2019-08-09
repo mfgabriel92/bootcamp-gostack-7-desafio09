@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-  background: #353f60;
+  background: #464e6a;
   padding: 20px 30px;
   width: 100%;
   max-width: 415px;
@@ -24,16 +24,6 @@ export const Content = styled.div`
 
     & > div {
       margin-bottom: 10px;
-    }
-
-    div {
-      input {
-        color: #fcfcfc;
-
-        &::placeholder {
-          color: #fcfcfc;
-        }
-      }
     }
 
     a {

@@ -26,7 +26,7 @@ function Header() {
           to="/new"
           icon={FaPlusSquare}
           iconSize={16}
-          bgcolor="#ff3e00"
+          bgcolor="#6414f7"
         />
         <User onClick={() => setShowing(!showing)}>
           <img src={noImage} alt="" />

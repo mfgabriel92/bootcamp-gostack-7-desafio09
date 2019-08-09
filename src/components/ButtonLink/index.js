@@ -17,13 +17,14 @@ ButtonLink.propTypes = {
   icon: PropTypes.any,
   iconSize: PropTypes.number,
   iconColor: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 }
 
 ButtonLink.defaultProps = {
   icon: null,
   iconSize: 20,
   iconColor: '#FFF',
+  text: '',
 }
 
 export default ButtonLink

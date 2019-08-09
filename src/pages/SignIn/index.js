@@ -50,7 +50,7 @@ function SignIn() {
           icon={FaCheckCircle}
           iconSize={18}
           text="Login"
-          bgcolor="#cb4949"
+          bgcolor="#6414f7"
           isLoading={isLoading}
         />
         <Link to="/signup">No account? Create one</Link>

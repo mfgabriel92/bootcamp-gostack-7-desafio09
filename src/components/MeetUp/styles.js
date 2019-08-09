@@ -1,16 +1,18 @@
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
+const size = 'default'
+
 export const Container = styled.li`
   display: flex;
   flex-direction: column;
-  background: #353f60;
+  background: #464e6a;
   box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
   color: #fcfcfc;
-  border-radius: 4px;
+  border-radius: 8px;
 
   ${props =>
     !props.isPast &&
@@ -23,36 +25,35 @@ export const Container = styled.li`
 `
 
 export const Banner = styled.div`
-  background: #eee;
-  height: 256px;
+  height: ${props => (props.size === 'small' ? '168px' : '256px')};
   background: url(${props => props.bgimage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  opacity: 0.5;
 `
 
 export const Info = styled.div`
   padding: 20px 0;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #455179;
   margin: 0 20px;
-  min-height: 238px;
+  min-height: 230px;
   justify-content: space-between;
 `
 
 export const Title = styled.h2`
   display: block;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
   letter-spacing: 1px;
+  margin-bottom: 13px;
 `
 
 export const Location = styled.p`
   display: block;
-  margin-top: 10px;
   font-size: 13px;
   display: flex;
   align-items: center;
+  opacity: 0.8;
 
   svg {
     margin-right: 7px;
@@ -63,14 +64,15 @@ export const Description = styled.p`
   display: block;
   font-style: italic;
   font-size: 14px;
-  margin-top: 30px;
+  margin-top: 35px;
 `
 
 export const Date = styled.p`
   display: block;
   font-size: 14px;
-  margin-top: 20px;
+  margin-top: 25px;
   font-weight: 500;
+  opacity: 0.4;
 
   svg {
     margin-right: 7px;
@@ -105,7 +107,7 @@ export const Ribbon = styled.div`
     z-index: -1;
     content: '';
     display: block;
-    border: 5px solid ${darken(0.1, 'orangered')};
+    border: 5px solid ${darken(0.1, '#6414f7')};
     border-top-color: transparent;
     border-right-color: transparent;
     top: 0;
@@ -119,7 +121,7 @@ export const Ribbon = styled.div`
   position: absolute;
   width: 150px;
   padding: 10px 0px;
-  background-color: orangered;
+  background-color: #6414f7;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;

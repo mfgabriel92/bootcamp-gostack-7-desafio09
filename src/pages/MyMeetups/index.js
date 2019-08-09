@@ -31,7 +31,7 @@ function MyMeetups() {
     return (
       <Meetups>
         {meetups.map(meetup => (
-          <MeetUp key={meetup.id} meetup={meetup} />
+          <MeetUp key={meetup.id} meetup={meetup} size="small" />
         ))}
       </Meetups>
     )
