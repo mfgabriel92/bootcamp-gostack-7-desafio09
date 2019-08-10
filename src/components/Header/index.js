@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import {
   FaUser,
-  FaCalendarCheck,
+  FaCalendarAlt,
+  FaCalendarDay,
   FaDoorOpen,
   FaPlusSquare,
 } from 'react-icons/fa'
@@ -23,7 +24,7 @@ function Header() {
       </Link>
       <Actions>
         <ButtonLink
-          to="/new"
+          to="/meetup/create"
           icon={FaPlusSquare}
           iconSize={16}
           bgcolor="#6414f7"
@@ -37,8 +38,13 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/my-meetups">
-                <FaCalendarCheck size={18} color="#fff" /> My Meetups
+              <Link to="/meetups/my">
+                <FaCalendarAlt size={18} color="#fff" /> My Meet-ups
+              </Link>
+            </li>
+            <li>
+              <Link to="/meetups/attending">
+                <FaCalendarDay size={18} color="#fff" /> Meet-ups I&apos;m going
               </Link>
             </li>
             <Separator />

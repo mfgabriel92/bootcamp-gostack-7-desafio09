@@ -26,7 +26,7 @@ module.exports = {
     'no-console': ['error', { allow: ['tron'] }],
     'prettier/prettier': 'error',
     'jsx-a11y/label-has-for': 'off',
-    'react/prop-types': [2, { ignore: ['children'] }],
+    'react/prop-types': [2, { ignore: ['children', 'params', 'match'] }],
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'react/jsx-one-expression-per-line': 'off',
     'react-native/no-raw-text': 'off',

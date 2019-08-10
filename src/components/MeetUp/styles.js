@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
-import { darken } from 'polished'
+import styled from 'styled-components'
+import { lighten, darken } from 'polished'
 
 export const Container = styled.li`
   display: flex;
@@ -9,17 +9,18 @@ export const Container = styled.li`
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  color: #fcfcfc;
   border-radius: 8px;
+  cursor: pointer;
 
-  ${props =>
-    !props.isPast &&
-    css`
-      &:hover {
-        transform: scale(1.02, 1.02);
-        box-shadow: 1px 0px 15px 5px rgba(0, 0, 0, 0.06);
-      }
-    `}
+  a {
+    color: #fcfcfc;
+  }
+
+  &:hover {
+    transform: scale(1.02, 1.02);
+    box-shadow: 1px 0px 15px 5px rgba(0, 0, 0, 0.06);
+    background: ${lighten(0.05, '#464e6a')};
+  }
 `
 
 export const Actions = styled.div`

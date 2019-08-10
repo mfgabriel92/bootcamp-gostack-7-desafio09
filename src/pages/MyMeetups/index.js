@@ -40,7 +40,7 @@ function MyMeetups() {
   return (
     <Container>
       <h1>
-        My created <span>meet-ups</span>
+        My <span>meet-ups</span>
       </h1>
       {renderEvents()}
     </Container>

@@ -34,6 +34,8 @@ export const LoadingWrapper = styled(Meetups)`
   .ph-item {
     width: 278px;
     padding: 0;
+    background: #464e6a;
+    border: 0;
 
     div {
       padding: 0;
@@ -44,7 +46,7 @@ export const LoadingWrapper = styled(Meetups)`
     }
 
     .ph-row {
-      padding: 20px;
+      padding: 10px;
     }
   }
 
@@ -52,7 +54,7 @@ export const LoadingWrapper = styled(Meetups)`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 20px !important;
+    padding: 0 10px !important;
 
     .ph-avatar {
       width: 25px !important;

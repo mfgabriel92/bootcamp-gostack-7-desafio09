@@ -96,5 +96,5 @@ export const Menu = styled.ul`
 export const Separator = styled.li`
   height: 1px;
   margin: 0 15px;
-  background: s;
+  background: #61677e;
 `
