@@ -33,7 +33,7 @@ function SignIn() {
         <Input
           icon={FaEnvelopeOpen}
           iconSize={18}
-          iconColor="#fcfcfc"
+          iconColor="#2d3450"
           name="email"
           type="email"
           placeholder="example@email.com"
@@ -41,7 +41,7 @@ function SignIn() {
         <Input
           icon={FaUnlockAlt}
           iconSize={18}
-          iconColor="#fcfcfc"
+          iconColor="#2d3450"
           name="password"
           type="password"
           placeholder="**********"
@@ -50,7 +50,6 @@ function SignIn() {
           icon={FaCheckCircle}
           iconSize={18}
           text="Login"
-          bgcolor="#6414f7"
           isLoading={isLoading}
         />
         <Link to="/signup">No account? Create one</Link>

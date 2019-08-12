@@ -30,6 +30,7 @@ function LoadingPlaceholder() {
     <LoadingWrapper>
       <Placeholder />
       <Placeholder />
+      <Placeholder />
     </LoadingWrapper>
   )
 }

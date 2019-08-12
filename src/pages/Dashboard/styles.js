@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 1280px;
+  margin: auto;
+  height: 100vh;
+  text-align: center;
 
   h1 {
     span {
-      margin-left: 10px;
+      margin-left: 5px;
     }
 
     svg {
@@ -15,7 +16,7 @@ export const Container = styled.div`
       transition: all 0.2s;
 
       &:hover {
-        color: #6414f7 !important;
+        color: #ca3201 !important;
         transform: scale(1.15, 1.15);
       }
 
@@ -46,7 +47,7 @@ export const Meetups = styled.ul`
   width: 896px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   padding: 20px 0;
 `
@@ -55,9 +56,8 @@ export const LoadingWrapper = styled(Meetups)`
   display: flex;
 
   .ph-item {
-    width: 512px;
+    width: 256px;
     padding: 0;
-    background: #464e6a;
     border: 0;
 
     div {
@@ -65,11 +65,11 @@ export const LoadingWrapper = styled(Meetups)`
     }
 
     .ph-picture {
-      height: 256px;
+      height: 168px;
     }
 
     .ph-row {
-      padding: 20px;
+      padding: 15px;
     }
   }
 

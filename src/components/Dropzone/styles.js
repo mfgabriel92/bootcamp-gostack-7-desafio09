@@ -6,14 +6,13 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 100px;
-  color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.15);
+  color: rgba(0, 0, 0, 0.1);
+  background: #b1b2b51c;
   margin-bottom: 15px;
   cursor: pointer;
   transition: all 0.2s;
-  border-radius: 8px;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: #b1b2b540;
   }
 `

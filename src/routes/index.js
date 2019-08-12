@@ -14,7 +14,7 @@ function Routes() {
       <Route exact path="/" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/dashboard" component={Dashboard} isPrivate />
-      <Route exact path="/meetup/create" component={New} isPrivate />
+      <Route exact path="/meetups/create" component={New} isPrivate />
       <Route exact path="/meetups/my" component={MyMeetups} isPrivate />
       <Route
         exact

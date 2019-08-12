@@ -18,7 +18,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     min-height: 100vh;
-    background: linear-gradient(135deg, #303855, #161626);
+    background: linear-gradient(135deg,#d99556,#ca3201);
   }
 
   body, input, textarea, button {
@@ -52,6 +52,6 @@ export default createGlobalStyle`
   }
 
   .ph-picture, .ph-avatar, .ph-row > * {
-    background: #4f5673 !important;
+    background: #ececec !important;
   }
 `

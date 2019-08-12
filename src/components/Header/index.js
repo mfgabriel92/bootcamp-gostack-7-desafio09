@@ -1,16 +1,9 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import {
-  FaUser,
-  FaCalendarAlt,
-  FaCalendarDay,
-  FaDoorOpen,
-  FaPlusSquare,
-} from 'react-icons/fa'
+import { FaHome, FaCalendarAlt, FaCalendarDay } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import ButtonLink from '../ButtonLink'
-import { Container, Actions, User, Menu, Separator } from './styles'
-import logo from '../../assets/logo-icon-white.png'
+import { Container, User, Menu } from './styles'
+import logo from '../../assets/logo-horizontal.png'
 import noImage from '../../assets/no-user.png'
 
 function Header() {
@@ -22,40 +15,30 @@ function Header() {
       <Link to="/dashboard">
         <img src={logo} alt="MeepApp Dashboard" />
       </Link>
-      <Actions>
-        <ButtonLink
-          to="/meetup/create"
-          icon={FaPlusSquare}
-          iconSize={16}
-          bgcolor="#6414f7"
-        />
-        <User onClick={() => setShowing(!showing)}>
-          <img src={noImage} alt="" />
-          <Menu showing={showing} onMouseLeave={() => setShowing(false)}>
-            <li>
-              <Link to="/profile">
-                <FaUser size={18} color="#fff" /> {me.first_name} {me.last_name}
-              </Link>
-            </li>
-            <li>
-              <Link to="/meetups/my">
-                <FaCalendarAlt size={18} color="#fff" /> My Meet-ups
-              </Link>
-            </li>
-            <li>
-              <Link to="/meetups/attending">
-                <FaCalendarDay size={18} color="#fff" /> Meet-ups I&apos;m going
-              </Link>
-            </li>
-            <Separator />
-            <li>
-              <Link to="/">
-                <FaDoorOpen size={18} color="#fff" /> Logoff
-              </Link>
-            </li>
-          </Menu>
-        </User>
-      </Actions>
+      <Menu showing={showing} onMouseLeave={() => setShowing(false)}>
+        <li>
+          <Link to="/">
+            <FaHome size={15} color="#333" /> Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/meetups/my">
+            <FaCalendarAlt size={15} color="#333" /> My Meet-ups
+          </Link>
+        </li>
+        <li>
+          <Link to="/meetups/attending">
+            <FaCalendarDay size={15} color="#333" /> Meet-ups I&apos;m going
+          </Link>
+        </li>
+      </Menu>
+      <User onClick={() => setShowing(!showing)}>
+        <Link to="/meetups/create">New Meet-up</Link>
+        <Link to="/profile">
+          {me.first_name} {me.last_name}
+        </Link>
+        <img src={noImage} alt="" />
+      </User>
     </Container>
   )
 }

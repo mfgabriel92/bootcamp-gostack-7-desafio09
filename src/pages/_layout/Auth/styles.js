@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import bg from '../../../assets/bg.png'
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -6,16 +7,16 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(${bg}) no-repeat fixed center;
 `
 
 export const Content = styled.div`
-  background: #464e6a;
+  background: #ffffff;
   padding: 20px 30px;
   width: 100%;
   max-width: 415px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
-  border-radius: 4px;
 
   form {
     display: flex;
@@ -33,6 +34,10 @@ export const Content = styled.div`
       &:hover {
         opacity: 1;
       }
+    }
+
+    button {
+      margin-top: 10px;
     }
   }
 `

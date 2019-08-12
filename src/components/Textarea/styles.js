@@ -10,9 +10,8 @@ export const Container = styled.div`
   margin: 0 0 10px;
   display: flex;
   flex-direction: row;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-
+  background: #b1b2b51c;
+  border: 1px solid #ececec;
   svg {
     margin-right: 15px;
     margin-top: 10px;
@@ -25,10 +24,10 @@ export const Container = styled.div`
     font-weight: bold;
     flex: 1;
     height: 100%;
-    color: #fcfcfc;
+    color: #2d3450;
 
     &::placeholder {
-      color: #fcfcfc;
+      color: #2d3450;
     }
   }
 `

@@ -29,21 +29,21 @@ function SignUp() {
       <Form onSubmit={validateForm}>
         <Input
           icon={FaUserAlt}
-          iconColor="#171618"
+          iconColor="#2d3450"
           iconSize={18}
           name="first_name"
           placeholder="John"
         />
         <Input
           icon={FaUserAlt}
-          iconColor="#171618"
+          iconColor="#2d3450"
           iconSize={18}
           name="last_name"
           placeholder="Doe"
         />
         <Input
           icon={FaEnvelopeOpen}
-          iconColor="#171618"
+          iconColor="#2d3450"
           iconSize={18}
           name="email"
           type="email"
@@ -51,7 +51,7 @@ function SignUp() {
         />
         <Input
           icon={FaUnlockAlt}
-          iconColor="#171618"
+          iconColor="#2d3450"
           iconSize={18}
           name="password"
           type="password"
@@ -59,18 +59,13 @@ function SignUp() {
         />
         <Input
           icon={FaUnlockAlt}
-          iconColor="#171618"
+          iconColor="#2d3450"
           iconSize={18}
           name="confirmPassword"
           type="password"
           placeholder="**********"
         />
-        <Button
-          icon={FaPlusCircle}
-          iconSize={18}
-          text="Register"
-          bgcolor="#6414f7"
-        />
+        <Button icon={FaPlusCircle} iconSize={18} text="Register" />
         <Link to="/">Have an account? Login now</Link>
       </Form>
     </>

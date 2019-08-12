@@ -13,23 +13,23 @@ export const Container = styled.div`
   }
 
   form {
+    background: #fff;
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 768px;
+    border: 1px solid #f7f7f7;
     margin: auto;
-    margin-top: 50px;
-    width: 920px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: #464e6a;
-    box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.03);
-    padding: 30px 40px;
-    border-radius: 8px;
+
+    & > div {
+      margin-bottom: 18px;
+    }
 
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 7px;
       margin-top: 12px;
-      color: #fcfcfc;
+      color: #333;
     }
 
     textarea {
@@ -39,8 +39,8 @@ export const Container = styled.div`
     }
 
     button {
-      margin-top: 30px !important;
-      margin: 0;
+      margin-top: 30px;
+      margin-left: auto;
     }
   }
 `

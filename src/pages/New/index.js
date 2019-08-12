@@ -56,7 +56,7 @@ function New({ match }) {
           label="Event title *"
           icon={FaCalendarAlt}
           iconSize={18}
-          iconColor="#fcfcfc"
+          iconColor="#2d3450"
           name="title"
           placeholder="Title of the event"
         />
@@ -64,7 +64,7 @@ function New({ match }) {
           label="Description *"
           icon={FaPencilAlt}
           iconSize={18}
-          iconColor="#fcfcfc"
+          iconColor="#2d3450"
           name="description"
           placeholder="Description of the event"
         />
@@ -72,7 +72,7 @@ function New({ match }) {
           <DateInput
             label="Date *"
             name="date"
-            borderColor="#fcfcfc"
+            borderColor="#2d3450"
             value={date}
             onChange={setDate}
           />
@@ -80,7 +80,7 @@ function New({ match }) {
             label="Location *"
             icon={FaMapMarkedAlt}
             iconSize={18}
-            iconColor="#fcfcfc"
+            iconColor="#2d3450"
             name="location"
             placeholder="Specify the location"
           />
@@ -89,7 +89,6 @@ function New({ match }) {
           icon={FaCheckSquare}
           iconSize={18}
           text="Create Event"
-          bgcolor="#6414f7"
           isLoading={isLoading}
         />
       </Form>
