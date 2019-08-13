@@ -6,7 +6,7 @@ import SignUp from '../pages/SignUp'
 import Dashboard from '../pages/Dashboard'
 import New from '../pages/New'
 import MyMeetups from '../pages/MyMeetups'
-import AttendingMeetups from '../pages/MyMeetups'
+import AttendingMeetups from '../pages/AttendingMeetups'
 
 function Routes() {
   return (

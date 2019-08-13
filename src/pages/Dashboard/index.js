@@ -4,9 +4,9 @@ import { format, addDays, subDays, isToday } from 'date-fns'
 import api from '../../services/api'
 import MeetUp from '../../components/MeetUp'
 import { Container, Meetups } from './styles'
-import LoadingPlaceholder from './LoadingPlaceholder'
+import LoadingPlaceholder from '../../components/LoadingPlaceholder'
 
-function Dashboard() {
+function Dashboard({ location }) {
   const [date, setDate] = useState(new Date())
   const [meetups, setMeetups] = useState([])
   const [page, setPage] = useState(1)

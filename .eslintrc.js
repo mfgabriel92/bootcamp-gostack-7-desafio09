@@ -28,7 +28,7 @@ module.exports = {
     'jsx-a11y/label-has-for': 'off',
     'react/prop-types': [
       2,
-      { ignore: ['props', 'children', 'params', 'match'] },
+      { ignore: ['props', 'children', 'params', 'match', 'location'] },
     ],
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'react/jsx-one-expression-per-line': 'off',

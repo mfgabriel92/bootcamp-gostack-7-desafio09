@@ -4,14 +4,14 @@ import { Container, Meetups } from './styles'
 import MeetUp from '../../components/MeetUp'
 import LoadingPlaceholder from '../../components/LoadingPlaceholder'
 
-function MyMeetups() {
+function AttendingMeetups() {
   const [meetups, setMeetups] = useState([])
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     async function fetchMeetups() {
-      const { data } = await api.get('users/meetups', {
+      const { data } = await api.get('meetups/attending', {
         params: {
           page,
         },
@@ -40,11 +40,11 @@ function MyMeetups() {
   return (
     <Container>
       <h1>
-        Meet-ups I <span>created</span>
+        Meet-ups I am <span>going</span>
       </h1>
       {renderEvents()}
     </Container>
   )
 }
 
-export default MyMeetups
+export default AttendingMeetups

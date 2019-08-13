@@ -35,10 +35,11 @@ export const Container = styled.div`
     background: transparent;
     border: 0;
     transition: all 0.2s;
-    color: #fcfcfc;
+    color: #333;
 
     &:hover {
       transform: scale(1.15, 1.15);
+      color: #ca3201 !important;
     }
   }
 `
@@ -50,41 +51,4 @@ export const Meetups = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   padding: 20px 0;
-`
-
-export const LoadingWrapper = styled(Meetups)`
-  display: flex;
-
-  .ph-item {
-    width: 256px;
-    padding: 0;
-    border: 0;
-
-    div {
-      padding: 0;
-    }
-
-    .ph-picture {
-      height: 168px;
-    }
-
-    .ph-row {
-      padding: 15px;
-    }
-  }
-
-  .avatar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 20px !important;
-
-    .ph-avatar {
-      width: 25px !important;
-      min-width: 25px !important;
-      height: 25px !important;
-      margin-left: auto;
-      margin-right: 10px;
-    }
-  }
 `
