@@ -21,7 +21,6 @@ export const LoadingWrapper = styled(Meetups)`
   .ph-item {
     width: 278px;
     padding: 0;
-    background: #464e6a;
     border: 0;
 
     div {

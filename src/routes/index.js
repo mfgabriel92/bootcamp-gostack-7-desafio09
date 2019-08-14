@@ -7,6 +7,7 @@ import Dashboard from '../pages/Dashboard'
 import New from '../pages/New'
 import MyMeetups from '../pages/MyMeetups'
 import AttendingMeetups from '../pages/AttendingMeetups'
+import Detail from '../pages/Detail'
 
 function Routes() {
   return (
@@ -22,6 +23,7 @@ function Routes() {
         component={AttendingMeetups}
         isPrivate
       />
+      <Route exact path="/meetups/:id" component={Detail} isPrivate />
     </Switch>
   )
 }

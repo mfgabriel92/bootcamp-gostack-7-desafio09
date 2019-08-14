@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { darken } from 'polished'
 
-export const Container = styled.li`
+export const Container = styled.div`
   display: flex;
+  width: 896px;
+  margin: auto;
   flex-direction: column;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
   border: 1px solid #f7f7f7;
   background: #fff;
   text-align: left;
@@ -15,15 +15,10 @@ export const Container = styled.li`
   a {
     color: #333;
   }
-
-  &:hover {
-    transform: scale(1.02, 1.02);
-    box-shadow: 1px 0px 15px 2px rgba(0, 0, 0, 0.06);
-  }
 `
 
 export const Banner = styled.div`
-  height: 209px;
+  height: 256px;
   background: url(${props => props.bgimage});
   background-repeat: no-repeat;
   background-size: cover;

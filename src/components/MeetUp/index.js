@@ -17,7 +17,7 @@ import {
 import noBanner from '../../assets/no-banner.png'
 import noImage from '../../assets/no-user.png'
 
-function MeetUp({ size, meetup }) {
+function MeetUp({ meetup }) {
   const formattedDate = useMemo(
     () => format(parseISO(meetup.date), "MMMM do, yyyy ' | ' h:mm a"),
     [meetup.date]
@@ -27,10 +27,7 @@ function MeetUp({ size, meetup }) {
     <Container isPast={meetup.past}>
       <Link to={`/meetups/${meetup.id}`}>
         {meetup.past && <Ribbon>Done</Ribbon>}
-        <Banner
-          size={size}
-          bgimage={meetup.banner ? meetup.banner.path : noBanner}
-        />
+        <Banner bgimage={meetup.banner ? meetup.banner.path : noBanner} />
         <Info>
           <Title>{meetup.title.substring(0, 25)}</Title>
           <Location>

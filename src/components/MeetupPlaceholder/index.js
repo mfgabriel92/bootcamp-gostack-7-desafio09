@@ -25,7 +25,7 @@ function Placeholder() {
     </li>
   )
 }
-function LoadingPlaceholder() {
+function MeetupPlaceholder() {
   return (
     <LoadingWrapper>
       <Placeholder />
@@ -35,4 +35,4 @@ function LoadingPlaceholder() {
   )
 }
 
-export default LoadingPlaceholder
+export default MeetupPlaceholder

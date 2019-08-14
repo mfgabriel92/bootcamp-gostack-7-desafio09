@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import api from '../../services/api'
 import { Container, Meetups } from './styles'
 import MeetUp from '../../components/MeetUp'
-import LoadingPlaceholder from '../../components/LoadingPlaceholder'
+import MeetupPlaceholder from '../../components/MeetupPlaceholder'
 
 function AttendingMeetups() {
   const [meetups, setMeetups] = useState([])
@@ -25,7 +25,7 @@ function AttendingMeetups() {
 
   function renderEvents() {
     if (isLoading) {
-      return <LoadingPlaceholder />
+      return <MeetupPlaceholder />
     }
 
     return (
