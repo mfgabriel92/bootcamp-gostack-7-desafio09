@@ -71,11 +71,32 @@ export const Date = styled.p`
   }
 `
 
+export const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+`
+
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+
+  button,
+  a {
+    color: #f7f7f7;
+    height: 30px;
+    margin: 0;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+  }
+`
+
 export const User = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 10px 20px;
 
   img {
     width: 25px;

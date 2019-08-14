@@ -40,7 +40,7 @@ export const Button = styled.button.attrs(props => ({
     background: linear-gradient(135deg, #bb783a, #8f2604);
   }
 
-  &:disabled: {
+  &:disabled {
     opacity: 0.2;
   }
 `

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { format, parseISO } from 'date-fns'
-import { FaHome } from 'react-icons/fa'
+import {
+  FaHome,
+  FaCheckCircle,
+  FaPenAlt,
+  FaCalendarMinus,
+} from 'react-icons/fa'
 import api from '../../services/api'
 import {
   Container,
@@ -10,16 +16,21 @@ import {
   Location,
   Description,
   Date,
+  Footer,
+  Actions,
   User,
   Ribbon,
 } from './styles'
 import DetailPlaceholder from '../../components/DetailPlaceholder'
+import Button from '../../components/Button'
+import ButtonLink from '../../components/ButtonLink'
 import noBanner from '../../assets/no-banner.png'
 import noImage from '../../assets/no-user.png'
 
 function Detail({ match }) {
   const [meetup, setMeetup] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const me = useSelector(state => state.user.me)
 
   useEffect(() => {
     async function fetchDetails() {
@@ -31,12 +42,59 @@ function Detail({ match }) {
     fetchDetails()
   }, [match.params.id])
 
+  async function attendMeetup() {
+    await api.post(`/meetup/${meetup.id}/attend`)
+  }
+
+  async function cancelMeetup() {
+    await api.delete(`/meetup/${meetup.id}`)
+  }
+
+  function renderActions() {
+    const isMyMeetup = meetup.user.id === me.id
+
+    if (!isMyMeetup && !meetup.past) {
+      return (
+        <Button
+          type="button"
+          icon={FaCheckCircle}
+          text="Participate"
+          onClick={attendMeetup}
+        />
+      )
+    }
+
+    if (isMyMeetup && !meetup.past) {
+      return (
+        <>
+          <ButtonLink
+            to="#"
+            type="button"
+            icon={FaPenAlt}
+            iconSize={12}
+            text="Edit"
+          />
+          <Button
+            type="button"
+            icon={FaCalendarMinus}
+            iconSize={12}
+            text="Cancel Event"
+            onClick={cancelMeetup}
+          />
+        </>
+      )
+    }
+
+    return ''
+  }
+
   if (isLoading) {
     return <DetailPlaceholder />
   }
 
   return (
     <Container>
+      {meetup.past && <Ribbon>Done</Ribbon>}
       <Banner bgimage={meetup.banner ? meetup.banner.path : noBanner} />
       <Info>
         <Title>{meetup.title.substring(0, 25)}</Title>
@@ -50,15 +108,18 @@ function Detail({ match }) {
           {format(parseISO(meetup.date), "MMMM do, yyyy ' | ' h:mm a")}
         </Date>
       </Info>
-      <User>
-        <img
-          src={meetup.user.avatar ? meetup.user.avatar.path : noImage}
-          alt={meetup.user.first_name}
-        />
-        <p>
-          {meetup.user.first_name} {meetup.user.last_name}
-        </p>
-      </User>
+      <Footer>
+        <Actions>{renderActions()}</Actions>
+        <User>
+          <img
+            src={meetup.user.avatar ? meetup.user.avatar.path : noImage}
+            alt={meetup.user.first_name}
+          />
+          <p>
+            {meetup.user.first_name} {meetup.user.last_name}
+          </p>
+        </User>
+      </Footer>
     </Container>
   )
 }

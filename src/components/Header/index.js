@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { FaHome, FaCalendarAlt, FaCalendarDay } from 'react-icons/fa'
+import {
+  FaHome,
+  FaPlusCircle,
+  FaCalendarAlt,
+  FaCalendarDay,
+} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { Container, User, Menu } from './styles'
+import ButtonLink from '../ButtonLink'
 import logo from '../../assets/logo-horizontal.png'
 import noImage from '../../assets/no-user.png'
 
@@ -33,7 +39,12 @@ function Header() {
         </li>
       </Menu>
       <User onClick={() => setShowing(!showing)}>
-        <Link to="/meetups/create">New Meet-up</Link>
+        <ButtonLink
+          to="/meetups/create"
+          text="Create meet-up"
+          icon={FaPlusCircle}
+          iconSize={16}
+        />
         <Link to="/profile">
           {me.first_name} {me.last_name}
         </Link>

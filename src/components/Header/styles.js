@@ -36,18 +36,6 @@ export const User = styled.div`
   a {
     margin-right: 15px;
     font-weight: bold;
-    color: #303855;
-
-    &:nth-of-type(1) {
-      color: #fff;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, #d99556, #ca3201);
-      transition: background 0.2s;
-
-      &:hover {
-        background: linear-gradient(135deg, #eab584, #ec693f);
-      }
-    }
   }
 `
 
