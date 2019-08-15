@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { format, parseISO } from 'date-fns'
 import {
   FaHome,
@@ -21,6 +21,7 @@ import {
   User,
   Ribbon,
 } from './styles'
+import { attendMeetup } from '../../store/meetup/actions'
 import DetailPlaceholder from '../../components/DetailPlaceholder'
 import Button from '../../components/Button'
 import ButtonLink from '../../components/ButtonLink'
@@ -31,6 +32,7 @@ function Detail({ match }) {
   const [meetup, setMeetup] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const me = useSelector(state => state.user.me)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     async function fetchDetails() {
@@ -41,10 +43,6 @@ function Detail({ match }) {
 
     fetchDetails()
   }, [match.params.id])
-
-  async function attendMeetup() {
-    await api.post(`/meetup/${meetup.id}/attend`)
-  }
 
   async function cancelMeetup() {
     await api.delete(`/meetup/${meetup.id}`)
@@ -58,8 +56,8 @@ function Detail({ match }) {
         <Button
           type="button"
           icon={FaCheckCircle}
-          text="Participate"
-          onClick={attendMeetup}
+          text="I want to attend!"
+          onClick={() => dispatch(attendMeetup(meetup.id))}
         />
       )
     }

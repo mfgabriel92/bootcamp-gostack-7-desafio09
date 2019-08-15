@@ -9,10 +9,12 @@ const INITIAL_STATE = {
 export default function meetup(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
-      case types.CREATE_MEETUP:
+      case types.CREATE_MEETUP || types.ATTEND_MEETUP:
         draft.isLoading = true
         break
-      case types.CREATE_MEETUP_SUCCESS || types.CREATE_MEETUP_FAILURE:
+      case types.CREATE_MEETUP_SUCCESS ||
+        types.ATTEND_MEETUP_SUCCESS ||
+        types.FAILURE:
         draft.isLoading = false
         break
       default:

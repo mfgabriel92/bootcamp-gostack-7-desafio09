@@ -18,8 +18,25 @@ const createMeetupSuccess = meetup => ({
   },
 })
 
-const createMeetupFailure = () => ({
-  type: types.CREATE_MEETUP_FAILURE,
+const attendMeetup = id => ({
+  type: types.ATTEND_MEETUP,
+  payload: {
+    id,
+  },
 })
 
-export { createMeetup, createMeetupSuccess, createMeetupFailure }
+const attendMeetupSuccess = () => ({
+  type: types.ATTEND_MEETUP_SUCCESS,
+})
+
+const failure = () => ({
+  type: types.FAILURE,
+})
+
+export {
+  createMeetup,
+  createMeetupSuccess,
+  attendMeetup,
+  attendMeetupSuccess,
+  failure,
+}
