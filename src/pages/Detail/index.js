@@ -21,7 +21,7 @@ import {
   User,
   Ribbon,
 } from './styles'
-import { attendMeetup } from '../../store/meetup/actions'
+import { attendMeetup, cancelMeetup } from '../../store/meetup/actions'
 import DetailPlaceholder from '../../components/DetailPlaceholder'
 import Button from '../../components/Button'
 import ButtonLink from '../../components/ButtonLink'
@@ -43,10 +43,6 @@ function Detail({ match }) {
 
     fetchDetails()
   }, [match.params.id])
-
-  async function cancelMeetup() {
-    await api.delete(`/meetup/${meetup.id}`)
-  }
 
   function renderActions() {
     const isMyMeetup = meetup.user.id === me.id
@@ -77,7 +73,7 @@ function Detail({ match }) {
             icon={FaCalendarMinus}
             iconSize={12}
             text="Cancel Event"
-            onClick={cancelMeetup}
+            onClick={() => dispatch(cancelMeetup(meetup.id))}
           />
         </>
       )

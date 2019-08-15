@@ -3,7 +3,12 @@ import { call, put, all, takeLatest } from 'redux-saga/effects'
 import { toast } from 'react-toastify'
 import api from '../../services/api'
 import history from '../../services/history'
-import { createMeetupSuccess, attendMeetupSuccess, failure } from './actions'
+import {
+  createMeetupSuccess,
+  attendMeetupSuccess,
+  cancelMeetupSuccess,
+  failure,
+} from './actions'
 import types from './types'
 import ErrorMessage from '../../components/ErrorMessage'
 
@@ -50,7 +55,23 @@ export function* attendMeetup({ payload: { id } }) {
   }
 }
 
+export function* cancelMeetup({ payload: { id } }) {
+  try {
+    yield call(api.delete, `/meetups/${id}`)
+    yield put(cancelMeetupSuccess())
+
+    toast.success(`You have canceled your meet-up`)
+    history.push('/meetups/my')
+  } catch ({ response: { data } }) {
+    toast.error(<ErrorMessage errors={data} />, {
+      autoClose: 2000,
+    })
+    yield put(failure())
+  }
+}
+
 export default all([
   takeLatest(types.CREATE_MEETUP, createMeetup),
   takeLatest(types.ATTEND_MEETUP, attendMeetup),
+  takeLatest(types.CANCEL_MEETUP, cancelMeetup),
 ])

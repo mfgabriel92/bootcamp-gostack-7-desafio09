@@ -1,42 +1,59 @@
 import types from './types'
 
-const createMeetup = (title, description, date, location, banner) => ({
-  type: types.CREATE_MEETUP,
-  payload: {
-    title,
-    description,
-    date,
-    location,
-    banner,
-  },
-})
+export function createMeetup(title, description, date, location, banner) {
+  return {
+    type: types.CREATE_MEETUP,
+    payload: {
+      title,
+      description,
+      date,
+      location,
+      banner,
+    },
+  }
+}
 
-const createMeetupSuccess = meetup => ({
-  type: types.CREATE_MEETUP_SUCCESS,
-  payload: {
-    meetup,
-  },
-})
+export function createMeetupSuccess(meetup) {
+  return {
+    type: types.CREATE_MEETUP_SUCCESS,
+    payload: {
+      meetup,
+    },
+  }
+}
 
-const attendMeetup = id => ({
-  type: types.ATTEND_MEETUP,
-  payload: {
-    id,
-  },
-})
+export function attendMeetup(id) {
+  return {
+    type: types.ATTEND_MEETUP,
+    payload: {
+      id,
+    },
+  }
+}
 
-const attendMeetupSuccess = () => ({
-  type: types.ATTEND_MEETUP_SUCCESS,
-})
+export function attendMeetupSuccess() {
+  return {
+    type: types.ATTEND_MEETUP_SUCCESS,
+  }
+}
 
-const failure = () => ({
-  type: types.FAILURE,
-})
+export function cancelMeetup(id) {
+  return {
+    type: types.CANCEL_MEETUP,
+    payload: {
+      id,
+    },
+  }
+}
 
-export {
-  createMeetup,
-  createMeetupSuccess,
-  attendMeetup,
-  attendMeetupSuccess,
-  failure,
+export function cancelMeetupSuccess() {
+  return {
+    type: types.CANCEL_MEETUP_SUCCESS,
+  }
+}
+
+export function failure() {
+  return {
+    type: types.FAILURE,
+  }
 }

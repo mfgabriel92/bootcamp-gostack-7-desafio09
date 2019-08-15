@@ -1,23 +1,27 @@
 import types from './types'
 
-const signIn = (email, password) => {
+export function signIn(email, password) {
   return {
     type: types.SIGN_IN,
     payload: { email, password },
   }
 }
 
-const signInSuccess = (token, user) => ({
-  type: types.SIGN_IN_SUCCESS,
-  payload: { token, user },
-})
+export function signInSuccess(token, user) {
+  return {
+    type: types.SIGN_IN_SUCCESS,
+    payload: { token, user },
+  }
+}
 
-const logoff = () => ({
-  type: types.LOGOFF,
-})
+export function logoff() {
+  return {
+    type: types.LOGOFF,
+  }
+}
 
-const failure = () => ({
-  type: types.FAILURE,
-})
-
-export { signIn, signInSuccess, logoff, failure }
+export function failure() {
+  return {
+    type: types.FAILURE,
+  }
+}
