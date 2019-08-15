@@ -11,6 +11,9 @@ export default function auth(state = INITIAL_STATE, action) {
       case authTypes.SIGN_IN_SUCCESS:
         draft.me = action.payload.user
         break
+      case authTypes.LOGOFF:
+        draft.me = null
+        break
       default:
     }
   })

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {
   FaHome,
   FaPlusCircle,
@@ -7,14 +7,17 @@ import {
   FaCalendarDay,
 } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { Container, User, Menu } from './styles'
+import { Container, Right, User, Menu } from './styles'
+import { logoff } from '../../store/auth/actions'
 import ButtonLink from '../ButtonLink'
+import Button from '../Button'
 import logo from '../../assets/logo-horizontal.png'
 import noImage from '../../assets/no-user.png'
 
 function Header() {
   const [showing, setShowing] = useState(false)
   const me = useSelector(state => state.user.me)
+  const dispatch = useDispatch()
 
   return (
     <Container>
@@ -38,18 +41,27 @@ function Header() {
           </Link>
         </li>
       </Menu>
-      <User onClick={() => setShowing(!showing)}>
+      <Right>
         <ButtonLink
           to="/meetups/create"
           text="Create meet-up"
           icon={FaPlusCircle}
           iconSize={16}
         />
-        <Link to="/profile">
-          {me.first_name} {me.last_name}
-        </Link>
-        <img src={noImage} alt="" />
-      </User>
+        <User onClick={() => setShowing(!showing)}>
+          <div>
+            <Link to="/profile">
+              {me.first_name} {me.last_name}
+            </Link>
+            <Button
+              type="button"
+              text="Logoff"
+              onClick={() => dispatch(logoff())}
+            />
+          </div>
+          <img src={noImage} alt="" />
+        </User>
+      </Right>
     </Container>
   )
 }

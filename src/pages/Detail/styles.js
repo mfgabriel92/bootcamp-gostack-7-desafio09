@@ -90,6 +90,7 @@ export const Actions = styled.div`
     padding: 10px;
     margin-right: 10px;
     font-size: 12px;
+    border-radius: 50px;
   }
 `
 

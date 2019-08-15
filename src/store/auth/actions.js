@@ -12,8 +12,12 @@ const signInSuccess = (token, user) => ({
   payload: { token, user },
 })
 
+const logoff = () => ({
+  type: types.LOGOFF,
+})
+
 const failure = () => ({
   type: types.FAILURE,
 })
 
-export { signIn, signInSuccess, failure }
+export { signIn, signInSuccess, logoff, failure }

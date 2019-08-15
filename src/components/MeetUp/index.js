@@ -53,12 +53,7 @@ function MeetUp({ meetup }) {
 }
 
 MeetUp.propTypes = {
-  size: PropTypes.string,
   meetup: PropTypes.shape().isRequired,
-}
-
-MeetUp.defaultProps = {
-  size: 'default',
 }
 
 export default MeetUp

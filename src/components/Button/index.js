@@ -10,9 +10,10 @@ function BaseButton({
   text,
   type,
   isLoading,
+  onClick,
 }) {
   return (
-    <Button type={type} isLoading={isLoading}>
+    <Button type={type} isLoading={isLoading} onClick={onClick}>
       {Icon && !isLoading && <Icon size={iconSize} color={iconColor} />}
       {isLoading ? <FaSpinner /> : text}
     </Button>
@@ -26,6 +27,7 @@ BaseButton.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string,
   isLoading: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 BaseButton.defaultProps = {
@@ -34,6 +36,7 @@ BaseButton.defaultProps = {
   iconColor: '#FFF',
   type: 'submit',
   isLoading: false,
+  onClick: null,
 }
 
 export default BaseButton

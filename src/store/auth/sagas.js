@@ -31,7 +31,12 @@ export function* signIn({ payload: { email, password } }) {
   }
 }
 
+export function logoff() {
+  history.push('/')
+}
+
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest(types.SIGN_IN, signIn),
+  takeLatest(types.LOGOFF, logoff),
 ])

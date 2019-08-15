@@ -22,20 +22,58 @@ export const Container = styled.header`
   }
 `
 
+export const Right = styled.div`
+  display: flex;
+
+  & > a {
+    height: auto;
+    padding: 0 15px;
+  }
+`
+
 export const User = styled.div`
   transition: background 0.2s;
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: 20px;
 
   img {
     width: 40px;
     border-radius: 50%;
   }
 
-  a {
-    margin-right: 15px;
-    font-weight: bold;
+  div {
+    display: flex;
+    margin-right: 20px;
+    flex-direction: column;
+
+    a {
+      font-weight: bold;
+      color: #333;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #ca3201;
+      }
+    }
+
+    button {
+      background: transparent;
+      color: #d99556;
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+      padding-top: 7px;
+      height: auto;
+      transition: color 0.2s;
+      font-weight: normal;
+
+      &:hover {
+        background: transparent;
+        color: #ca3201;
+      }
+    }
   }
 `
 
