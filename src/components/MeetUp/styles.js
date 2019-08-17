@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { darken } from 'polished'
 
 export const Container = styled.li`
   display: flex;
@@ -34,6 +33,9 @@ export const Info = styled.div`
   padding: 15px 0;
   border-bottom: 1px solid #f5f5f5;
   margin: 0 20px;
+  height: 214px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `
 
@@ -62,6 +64,7 @@ export const Description = styled.p`
   font-style: italic;
   font-size: 14px;
   margin-top: 35px;
+  line-clamp: 3;
 `
 
 export const Date = styled.p`

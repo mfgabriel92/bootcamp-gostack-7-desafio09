@@ -29,12 +29,14 @@ function MeetUp({ meetup }) {
         {meetup.past && <Ribbon>Done</Ribbon>}
         <Banner bgimage={meetup.banner ? meetup.banner.path : noBanner} />
         <Info>
-          <Title>{meetup.title.substring(0, 25)}</Title>
-          <Location>
-            <FaHome size={16} /> {meetup.location}
-          </Location>
+          <div>
+            <Title>{meetup.title.substring(0, 25)}</Title>
+            <Location>
+              <FaHome size={16} /> {meetup.location}
+            </Location>
+          </div>
           <Description>
-            &quot;{meetup.description.substring(0, 128)}&quot;
+            &quot;{meetup.description.substring(0, 75)}&quot;
           </Description>
           <Date>{formattedDate}</Date>
         </Info>
