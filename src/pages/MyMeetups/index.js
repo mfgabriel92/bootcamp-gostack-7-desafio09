@@ -28,6 +28,10 @@ function MyMeetups() {
       return <MeetupPlaceholder />
     }
 
+    if (!isLoading && meetups.length === 0) {
+      return <h4>No created meet-ups yet</h4>
+    }
+
     return (
       <Meetups>
         {meetups.map(meetup => (

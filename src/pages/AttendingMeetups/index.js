@@ -28,6 +28,10 @@ function AttendingMeetups() {
       return <MeetupPlaceholder />
     }
 
+    if (!isLoading && meetups.length === 0) {
+      return <h4>Not attending any meet-ups yet</h4>
+    }
+
     return (
       <Meetups>
         {meetups.map(meetup => (

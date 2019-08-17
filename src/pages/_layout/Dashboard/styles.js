@@ -11,6 +11,7 @@ export const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   background: #fcfcfc;
+  text-align: center;
 
   h1 {
     margin-bottom: 20px;
