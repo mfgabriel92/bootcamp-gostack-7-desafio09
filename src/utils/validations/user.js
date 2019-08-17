@@ -1,9 +1,13 @@
 import * as Yup from 'yup'
 
 export default Yup.object().shape({
-  first_name: Yup.string().required('First name is required'),
-  middle_name: Yup.string(),
-  last_name: Yup.string().required('Last name is required'),
+  first_name: Yup.string()
+    .required('First name is required')
+    .max(12),
+  middle_name: Yup.string().max(20),
+  last_name: Yup.string()
+    .required('Last name is required')
+    .max(18),
   email: Yup.string()
     .email()
     .required('E-mail is required'),
