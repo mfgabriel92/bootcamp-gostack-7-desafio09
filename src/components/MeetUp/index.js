@@ -44,7 +44,8 @@ function MeetUp({ meetup }) {
             alt={meetup.user.first_name}
           />
           <p>
-            {meetup.user.first_name} {meetup.user.last_name}
+            {meetup.user.first_name} {meetup.user.middle_name}{' '}
+            {meetup.user.last_name}
           </p>
         </User>
       </Link>
