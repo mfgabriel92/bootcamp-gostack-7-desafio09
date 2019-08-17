@@ -4,6 +4,7 @@ import { Container } from './styles'
 import MeetUps from '../../components/MeetUps'
 import MeetUp from '../../components/MeetUp'
 import MeetupPlaceholder from '../../components/MeetupPlaceholder'
+import Pagination from '../../components/Pagination'
 
 function MyMeetups() {
   const [meetups, setMeetups] = useState([])
@@ -22,7 +23,7 @@ function MyMeetups() {
     }
 
     fetchMeetups()
-  }, [page])
+  }, [meetups, page])
 
   function renderEvents() {
     if (isLoading) {
@@ -48,6 +49,10 @@ function MyMeetups() {
         Meet-ups I <span>created</span>
       </h1>
       {renderEvents()}
+      <Pagination
+        onPreviousPage={() => setPage(page - 1)}
+        onNextPage={() => setPage(page + 1)}
+      />
     </Container>
   )
 }

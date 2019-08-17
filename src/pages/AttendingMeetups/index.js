@@ -4,6 +4,7 @@ import { Container } from './styles'
 import MeetUps from '../../components/MeetUps'
 import MeetUp from '../../components/MeetUp'
 import MeetupPlaceholder from '../../components/MeetupPlaceholder'
+import Pagination from '../../components/Pagination'
 
 function AttendingMeetups() {
   const [meetups, setMeetups] = useState([])
@@ -48,6 +49,10 @@ function AttendingMeetups() {
         Meet-ups I am <span>going</span>
       </h1>
       {renderEvents()}
+      <Pagination
+        onPreviousPage={() => setPage(page - 1)}
+        onNextPage={() => setPage(page + 1)}
+      />
     </Container>
   )
 }

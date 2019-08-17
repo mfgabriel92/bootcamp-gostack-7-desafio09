@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  height: 100vh;
+
   form {
     width: 768px;
     margin: auto;

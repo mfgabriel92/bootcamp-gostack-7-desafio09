@@ -6,6 +6,7 @@ import MeetUp from '../../components/MeetUp'
 import { Container } from './styles'
 import MeetUps from '../../components/MeetUps'
 import MeetupPlaceholder from '../../components/MeetupPlaceholder'
+import Pagination from '../../components/Pagination'
 
 function Dashboard() {
   const [date, setDate] = useState(new Date())
@@ -84,6 +85,10 @@ function Dashboard() {
         Today
       </button>
       {renderEvents()}
+      <Pagination
+        onPreviousPage={() => setPage(page - 1)}
+        onNextPage={() => setPage(page + 1)}
+      />
     </Container>
   )
 }
