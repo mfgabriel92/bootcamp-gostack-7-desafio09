@@ -11,13 +11,20 @@ function BaseInput({
   name,
   type,
   placeholder,
+  onChange,
 }) {
   return (
     <Wrapper>
       {label && <label htmlFor={name}>{label}</label>}
       <Container>
         {Icon && <Icon size={iconSize} color={iconColor} />}
-        <Input id={name} name={name} type={type} placeholder={placeholder} />
+        <Input
+          id={name}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          onChange={onChange}
+        />
       </Container>
     </Wrapper>
   )
@@ -31,6 +38,7 @@ BaseInput.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.any,
   placeholder: PropTypes.string,
+  onChange: PropTypes.func,
 }
 
 BaseInput.defaultProps = {
@@ -40,6 +48,7 @@ BaseInput.defaultProps = {
   iconColor: '#FFF',
   type: 'text',
   placeholder: '',
+  onChange: null,
 }
 
 export default BaseInput

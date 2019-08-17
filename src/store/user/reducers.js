@@ -1,5 +1,6 @@
 import produce from 'immer'
 import authTypes from '../auth/types'
+import types from './types'
 
 const INITIAL_STATE = {
   me: null,
@@ -10,6 +11,9 @@ export default function auth(state = INITIAL_STATE, action) {
     switch (action.type) {
       case authTypes.SIGN_IN_SUCCESS:
         draft.me = action.payload.user
+        break
+      case types.UPDATE_USER_SUCCESS:
+        draft.me = action.payload.me
         break
       case authTypes.LOGOFF:
         draft.me = null

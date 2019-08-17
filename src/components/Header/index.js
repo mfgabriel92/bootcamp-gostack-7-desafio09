@@ -51,7 +51,7 @@ function Header() {
         <User onClick={() => setShowing(!showing)}>
           <div>
             <Link to="/profile">
-              {me.first_name} {me.last_name}
+              {me.first_name} {me.middle_name} {me.last_name}
             </Link>
             <Button
               type="button"
