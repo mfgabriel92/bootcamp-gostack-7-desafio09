@@ -14,6 +14,20 @@ export function signInSuccess(token, user) {
   }
 }
 
+export function signUp({ first_name, last_name, email, password }) {
+  return {
+    type: types.SIGN_UP,
+    payload: { first_name, last_name, email, password },
+  }
+}
+
+export function signUpSuccess(user) {
+  return {
+    type: types.SIGN_UP_SUCCESS,
+    payload: { user },
+  }
+}
+
 export function logoff() {
   return {
     type: types.LOGOFF,

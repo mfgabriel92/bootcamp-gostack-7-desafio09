@@ -36,7 +36,7 @@ function SignIn() {
           iconColor="#2d3450"
           name="email"
           type="email"
-          placeholder="example@email.com"
+          placeholder="E-mail address"
         />
         <Input
           icon={FaUnlockAlt}
@@ -44,7 +44,7 @@ function SignIn() {
           iconColor="#2d3450"
           name="password"
           type="password"
-          placeholder="**********"
+          placeholder="Password"
         />
         <Button
           icon={FaCheckCircle}

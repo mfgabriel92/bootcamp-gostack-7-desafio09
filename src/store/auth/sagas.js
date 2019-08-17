@@ -2,7 +2,7 @@ import { call, put, all, takeLatest } from 'redux-saga/effects'
 import { toast } from 'react-toastify'
 import api from '../../services/api'
 import history from '../../services/history'
-import { signInSuccess, failure } from './actions'
+import { signInSuccess, signUpSuccess, failure } from './actions'
 import types from './types'
 
 export function setToken({ payload }) {
@@ -31,6 +31,26 @@ export function* signIn({ payload: { email, password } }) {
   }
 }
 
+export function* signUp({ payload }) {
+  try {
+    const { first_name, last_name, email, password } = payload
+    const { data } = yield call(api.post, '/users', {
+      first_name,
+      last_name,
+      email,
+      password,
+    })
+    const { user } = data
+    yield put(signUpSuccess(user))
+
+    toast.success('Account created. You may login now')
+    history.push('/')
+  } catch (e) {
+    toast.error(e.response.data.error)
+    yield put(failure())
+  }
+}
+
 export function logoff() {
   history.push('/')
 }
@@ -38,5 +58,6 @@ export function logoff() {
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest(types.SIGN_IN, signIn),
+  takeLatest(types.SIGN_UP, signUp),
   takeLatest(types.LOGOFF, logoff),
 ])
