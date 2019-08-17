@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../services/api'
-import { Container, Meetups } from './styles'
+import { Container } from './styles'
+import MeetUps from '../../components/MeetUps'
 import MeetUp from '../../components/MeetUp'
 import MeetupPlaceholder from '../../components/MeetupPlaceholder'
 
@@ -33,11 +34,11 @@ function AttendingMeetups() {
     }
 
     return (
-      <Meetups>
+      <MeetUps>
         {meetups.map(meetup => (
           <MeetUp key={meetup.id} meetup={meetup} size="small" />
         ))}
-      </Meetups>
+      </MeetUps>
     )
   }
 

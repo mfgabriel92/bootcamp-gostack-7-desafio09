@@ -3,7 +3,8 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { format, addDays, subDays, isToday } from 'date-fns'
 import api from '../../services/api'
 import MeetUp from '../../components/MeetUp'
-import { Container, Meetups } from './styles'
+import { Container } from './styles'
+import MeetUps from '../../components/MeetUps'
 import MeetupPlaceholder from '../../components/MeetupPlaceholder'
 
 function Dashboard() {
@@ -56,7 +57,7 @@ function Dashboard() {
     }
 
     return (
-      <Meetups>
+      <MeetUps>
         {meetups.map(meetup => (
           <MeetUp
             key={meetup.id}
@@ -64,7 +65,7 @@ function Dashboard() {
             onCancel={handleCancelEvent}
           />
         ))}
-      </Meetups>
+      </MeetUps>
     )
   }
 

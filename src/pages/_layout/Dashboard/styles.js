@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import bg from '../../../assets/bg.png'
 
 export const Wrapper = styled.div`
-  height: 100%;
+  min-height: 100vh;
   background: url(${bg}) no-repeat fixed center;
 `
 
@@ -14,8 +14,8 @@ export const Container = styled.div`
   text-align: center;
 
   h1 {
+    letter-spacing: 1.1px;
+    font-weight: 100;
     margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
   }
 `

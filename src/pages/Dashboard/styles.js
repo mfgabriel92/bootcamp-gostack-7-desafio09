@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   margin: auto;
-  height: 100vh;
   text-align: center;
+  min-height: 100vh;
 
   h1 {
     span {
@@ -41,13 +41,4 @@ export const Container = styled.div`
       color: #ca3201 !important;
     }
   }
-`
-
-export const Meetups = styled.ul`
-  width: 896px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  padding: 20px 0;
 `
