@@ -18,6 +18,7 @@ import schema from '../../utils/validations/user'
 function Profile() {
   const [changed, setChanged] = useState(false)
   const me = useSelector(state => state.user.me)
+  const { isLoading } = useSelector(state => state.user)
   const dispatch = useDispatch()
 
   async function validateForm(data) {
@@ -101,7 +102,12 @@ function Profile() {
           placeholder="Confirm new password"
           onChange={() => setChanged(true)}
         />
-        <Button icon={FaCheckCircle} iconSize={18} text="Update" />
+        <Button
+          icon={FaCheckCircle}
+          iconSize={18}
+          text="Update"
+          isLoading={isLoading}
+        />
       </Form>
     </Container>
   )
