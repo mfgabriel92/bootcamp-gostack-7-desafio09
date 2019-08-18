@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form } from '@rocketseat/unform'
 import {
@@ -10,7 +10,6 @@ import {
 import { toast } from 'react-toastify'
 import { Container, DateLocation } from './styles'
 import { createMeetup } from '../../store/meetup/actions'
-import api from '../../services/api'
 import Dropzone from '../../components/Dropzone'
 import Input from '../../components/Input'
 import Textarea from '../../components/Textarea'
@@ -25,14 +24,6 @@ function New({ match }) {
   const { isLoading } = useSelector(state => state.meetup)
   const dispatch = useDispatch()
   const { id } = match.params
-
-  useEffect(() => {
-    async function loadMeetup() {
-      const { data } = await api.get(`/meetup/${id}`)
-    }
-
-    loadMeetup()
-  }, [id])
 
   async function validateForm(data) {
     try {
