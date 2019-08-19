@@ -59,7 +59,11 @@ function New({ match }) {
         {id ? 'Update' : 'New'} <span>meet-up event</span>
       </h1>
       <Form initialData={meetup} onSubmit={validateForm}>
-        <Dropzone accept="image/*" onDropAccepted={setBanner} />
+        <Dropzone
+          accept="image/*"
+          onDropAccepted={setBanner}
+          banner={meetup && meetup.banner.path}
+        />
 
         <Input
           label="Event title *"
