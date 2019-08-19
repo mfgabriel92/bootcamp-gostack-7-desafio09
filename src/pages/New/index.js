@@ -10,7 +10,7 @@ import {
 import { toast } from 'react-toastify'
 import { parseISO } from 'date-fns'
 import { Container, DateLocation } from './styles'
-import { fetchMeetup, createMeetup } from '../../store/meetup/actions'
+import { fetchMeetup, createUpdateMeetup } from '../../store/meetup/actions'
 import DetailPlaceholder from '../../components/DetailPlaceholder'
 import Dropzone from '../../components/Dropzone'
 import Input from '../../components/Input'
@@ -37,7 +37,9 @@ function New({ match }) {
     try {
       await schema.validate(data, { abortEarly: false })
       const { title, description, location } = data
-      dispatch(createMeetup(title, description, date, location, banner[0]))
+      dispatch(
+        createUpdateMeetup(id, title, description, date, location, banner[0])
+      )
     } catch ({ errors }) {
       toast.error(<ErrorMessage errors={errors} />, { autoClose: 2000 })
     }

@@ -19,25 +19,40 @@ export function* fetchMeetup({ payload: { id } }) {
   }
 }
 
-export function* createMeetup({ payload }) {
+export function* createUpdateMeetup({ payload }) {
   try {
-    const { title, description, date, location, banner } = payload
-    const { data } = yield call(api.post, '/meetups', {
-      title,
-      description,
-      date,
-      location,
-    })
+    const { id = null, title, description, date, location, banner } = payload
+    let response
 
-    yield put(success())
+    if (id) {
+      response = yield call(api.put, `meetups/${id}`, {
+        title,
+        description,
+        date,
+        location,
+      })
+    } else {
+      response = yield call(api.post, 'meetups', {
+        title,
+        description,
+        date,
+        location,
+      })
+    }
 
     if (banner) {
       const image = new FormData()
       image.append('file', banner)
-      yield call(api.put, `/meetups/${data.meetup.id}/banner`, image)
+      yield call(api.put, `/meetups/${response.data.meetup.id}/banner`, image)
     }
 
-    toast.success(`Meetup "${data.meetup.title}" successfully created`)
+    yield put(success())
+
+    toast.success(
+      `Meetup "${response.data.meetup.title}" successfully ${
+        id ? 'updated' : 'created'
+      }`
+    )
     history.push('/dashboard')
   } catch ({ response: { data } }) {
     toast.error(<ErrorMessage errors={data} />, {
@@ -79,7 +94,7 @@ export function* cancelMeetup({ payload: { id } }) {
 
 export default all([
   takeLatest(types.FETCH_MEETUP, fetchMeetup),
-  takeLatest(types.CREATE_MEETUP, createMeetup),
+  takeLatest(types.CREATE_UPDATE_MEETUP, createUpdateMeetup),
   takeLatest(types.ATTEND_MEETUP, attendMeetup),
   takeLatest(types.CANCEL_MEETUP, cancelMeetup),
 ])

@@ -18,10 +18,18 @@ export function fetchMeetupSuccess(meetup) {
   }
 }
 
-export function createMeetup(title, description, date, location, banner) {
+export function createUpdateMeetup(
+  id,
+  title,
+  description,
+  date,
+  location,
+  banner
+) {
   return {
-    type: types.CREATE_MEETUP,
+    type: types.CREATE_UPDATE_MEETUP,
     payload: {
+      id,
       title,
       description,
       date,

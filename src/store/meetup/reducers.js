@@ -10,7 +10,7 @@ export default function meetup(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
       case types.FETCH_MEETUP ||
-        types.CREATE_MEETUP ||
+        types.CREATE_UPDATE_MEETUP ||
         types.ATTEND_MEETUP ||
         types.CANCEL_MEETUP:
         draft.isLoading = true
