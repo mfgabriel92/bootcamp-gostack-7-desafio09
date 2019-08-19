@@ -11,6 +11,7 @@ function BaseTextarea({
   borderColor,
   name,
   type,
+  value,
   placeholder,
 }) {
   return (
@@ -18,7 +19,13 @@ function BaseTextarea({
       {label && <label htmlFor={name}>{label}</label>}
       <Container bordercolor={borderColor}>
         {Icon && <Icon size={iconSize} color={iconColor} />}
-        <Textarea id={name} name={name} type={type} placeholder={placeholder} />
+        <Textarea
+          id={name}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          defaultValue={value}
+        />
       </Container>
     </Wrapper>
   )
@@ -32,6 +39,7 @@ BaseTextarea.propTypes = {
   borderColor: PropTypes.string,
   name: PropTypes.string.isRequired,
   type: PropTypes.any,
+  value: PropTypes.string,
   placeholder: PropTypes.string,
 }
 
@@ -42,6 +50,7 @@ BaseTextarea.defaultProps = {
   iconColor: '#FFF',
   borderColor: '#FFF',
   type: 'text',
+  value: '',
   placeholder: '',
 }
 

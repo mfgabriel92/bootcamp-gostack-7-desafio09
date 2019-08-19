@@ -26,6 +26,7 @@ function Routes() {
         isPrivate
       />
       <Route exact path="/meetups/:id" component={Detail} isPrivate />
+      <Route exact path="/meetups/:id/edit" component={New} isPrivate />
     </Switch>
   )
 }

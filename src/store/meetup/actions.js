@@ -1,5 +1,23 @@
 import types from './types'
 
+export function fetchMeetup(id) {
+  return {
+    type: types.FETCH_MEETUP,
+    payload: {
+      id,
+    },
+  }
+}
+
+export function fetchMeetupSuccess(meetup) {
+  return {
+    type: types.FETCH_MEETUP_SUCCESS,
+    payload: {
+      meetup,
+    },
+  }
+}
+
 export function createMeetup(title, description, date, location, banner) {
   return {
     type: types.CREATE_MEETUP,
@@ -13,14 +31,14 @@ export function createMeetup(title, description, date, location, banner) {
   }
 }
 
-export function createMeetupSuccess(meetup) {
-  return {
-    type: types.CREATE_MEETUP_SUCCESS,
-    payload: {
-      meetup,
-    },
-  }
-}
+// export function createMeetupSuccess(meetup) {
+//   return {
+//     type: types.CREATE_MEETUP_SUCCESS,
+//     payload: {
+//       meetup,
+//     },
+//   }
+// }
 
 export function attendMeetup(id) {
   return {
@@ -31,11 +49,11 @@ export function attendMeetup(id) {
   }
 }
 
-export function attendMeetupSuccess() {
-  return {
-    type: types.ATTEND_MEETUP_SUCCESS,
-  }
-}
+// export function attendMeetupSuccess() {
+//   return {
+//     type: types.ATTEND_MEETUP_SUCCESS,
+//   }
+// }
 
 export function cancelMeetup(id) {
   return {
@@ -46,9 +64,15 @@ export function cancelMeetup(id) {
   }
 }
 
-export function cancelMeetupSuccess() {
+// export function cancelMeetupSuccess() {
+//   return {
+//     type: types.CANCEL_MEETUP_SUCCESS,
+//   }
+// }
+
+export function success() {
   return {
-    type: types.CANCEL_MEETUP_SUCCESS,
+    type: types.SUCCESS,
   }
 }
 

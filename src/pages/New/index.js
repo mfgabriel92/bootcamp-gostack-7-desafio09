@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form } from '@rocketseat/unform'
 import {
@@ -8,8 +8,10 @@ import {
   FaMapMarkedAlt,
 } from 'react-icons/fa'
 import { toast } from 'react-toastify'
+import { parseISO } from 'date-fns'
 import { Container, DateLocation } from './styles'
-import { createMeetup } from '../../store/meetup/actions'
+import { fetchMeetup, createMeetup } from '../../store/meetup/actions'
+import DetailPlaceholder from '../../components/DetailPlaceholder'
 import Dropzone from '../../components/Dropzone'
 import Input from '../../components/Input'
 import Textarea from '../../components/Textarea'
@@ -21,9 +23,15 @@ import schema from '../../utils/validations/new'
 function New({ match }) {
   const [date, setDate] = useState(new Date())
   const [banner, setBanner] = useState([])
-  const { isLoading } = useSelector(state => state.meetup)
+  const { meetup, isLoading } = useSelector(state => state.meetup)
   const dispatch = useDispatch()
   const { id } = match.params
+
+  useEffect(() => {
+    if (id) {
+      dispatch(fetchMeetup(id))
+    }
+  }, [dispatch, id])
 
   async function validateForm(data) {
     try {
@@ -35,12 +43,14 @@ function New({ match }) {
     }
   }
 
+  if (isLoading) return <DetailPlaceholder />
+
   return (
     <Container>
       <h1>
-        {id ? 'Edit' : 'New'} <span>meet-up event</span>
+        {id ? 'Update' : 'New'} <span>meet-up event</span>
       </h1>
-      <Form onSubmit={validateForm}>
+      <Form initialData={meetup} onSubmit={validateForm}>
         <Dropzone accept="image/*" onDropAccepted={setBanner} />
 
         <Input
@@ -57,6 +67,7 @@ function New({ match }) {
           iconSize={18}
           iconColor="#2d3450"
           name="description"
+          value={meetup && meetup.description}
           placeholder="Description of the event"
         />
         <DateLocation>
@@ -64,7 +75,7 @@ function New({ match }) {
             label="Date *"
             name="date"
             borderColor="#2d3450"
-            value={date}
+            value={(meetup && parseISO(meetup.date)) || date}
             onChange={setDate}
           />
           <Input
@@ -79,7 +90,7 @@ function New({ match }) {
         <Button
           icon={FaCheckSquare}
           iconSize={18}
-          text="Create Event"
+          text={`${id ? 'Update' : 'Create'} meetup`}
           isLoading={isLoading}
         />
       </Form>

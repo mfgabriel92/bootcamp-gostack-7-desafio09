@@ -30,6 +30,7 @@ export const Container = styled.div`
       margin-bottom: 7px;
       margin-top: 12px;
       color: #333;
+      text-align: left;
     }
 
     textarea {

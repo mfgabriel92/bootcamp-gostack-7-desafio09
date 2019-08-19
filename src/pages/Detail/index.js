@@ -62,7 +62,7 @@ function Detail({ match }) {
       return (
         <>
           <ButtonLink
-            to="#"
+            to={`/meetups/${meetup.id}/edit`}
             type="button"
             icon={FaPenAlt}
             iconSize={12}

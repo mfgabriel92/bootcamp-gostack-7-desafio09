@@ -3,14 +3,21 @@ import { call, put, all, takeLatest } from 'redux-saga/effects'
 import { toast } from 'react-toastify'
 import api from '../../services/api'
 import history from '../../services/history'
-import {
-  createMeetupSuccess,
-  attendMeetupSuccess,
-  cancelMeetupSuccess,
-  failure,
-} from './actions'
+import { fetchMeetupSuccess, success, failure } from './actions'
 import types from './types'
 import ErrorMessage from '../../components/ErrorMessage'
+
+export function* fetchMeetup({ payload: { id } }) {
+  try {
+    const { data } = yield call(api.get, `meetups/${id}`)
+    yield put(fetchMeetupSuccess(data.meetup))
+  } catch ({ response: { data } }) {
+    toast.error(<ErrorMessage errors={data} />, {
+      autoClose: 2000,
+    })
+    yield put(failure())
+  }
+}
 
 export function* createMeetup({ payload }) {
   try {
@@ -22,7 +29,7 @@ export function* createMeetup({ payload }) {
       location,
     })
 
-    yield put(createMeetupSuccess())
+    yield put(success())
 
     if (banner) {
       const image = new FormData()
@@ -43,7 +50,7 @@ export function* createMeetup({ payload }) {
 export function* attendMeetup({ payload: { id } }) {
   try {
     yield call(api.post, `/meetups/${id}/attend`)
-    yield put(attendMeetupSuccess())
+    yield put(success())
 
     toast.success(`You have joined the meet-up`)
     history.push('/meetups/attending')
@@ -58,7 +65,7 @@ export function* attendMeetup({ payload: { id } }) {
 export function* cancelMeetup({ payload: { id } }) {
   try {
     yield call(api.delete, `/meetups/${id}`)
-    yield put(cancelMeetupSuccess())
+    yield put(success())
 
     toast.success(`You have canceled your meet-up`)
     history.push('/meetups/my')
@@ -71,6 +78,7 @@ export function* cancelMeetup({ payload: { id } }) {
 }
 
 export default all([
+  takeLatest(types.FETCH_MEETUP, fetchMeetup),
   takeLatest(types.CREATE_MEETUP, createMeetup),
   takeLatest(types.ATTEND_MEETUP, attendMeetup),
   takeLatest(types.CANCEL_MEETUP, cancelMeetup),
