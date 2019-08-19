@@ -21,9 +21,9 @@ import ErrorMessage from '../../components/ErrorMessage'
 import schema from '../../utils/validations/new'
 
 function New({ match }) {
+  const { meetup, isLoading } = useSelector(state => state.meetup)
   const [date, setDate] = useState(new Date())
   const [banner, setBanner] = useState([])
-  const { meetup, isLoading } = useSelector(state => state.meetup)
   const dispatch = useDispatch()
   const { id } = match.params
 
@@ -32,6 +32,12 @@ function New({ match }) {
       dispatch(fetchMeetup(id))
     }
   }, [dispatch, id])
+
+  useEffect(() => {
+    if (meetup) {
+      setDate(parseISO(meetup.date))
+    }
+  }, [meetup])
 
   async function validateForm(data) {
     try {
@@ -77,7 +83,7 @@ function New({ match }) {
             label="Date *"
             name="date"
             borderColor="#2d3450"
-            value={(meetup && parseISO(meetup.date)) || date}
+            value={date}
             onChange={setDate}
           />
           <Input
