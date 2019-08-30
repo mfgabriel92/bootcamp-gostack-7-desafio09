@@ -23,7 +23,7 @@ function MyMeetups() {
     }
 
     fetchMeetups()
-  }, [meetups, page])
+  }, [page])
 
   function renderEvents() {
     if (isLoading) {
