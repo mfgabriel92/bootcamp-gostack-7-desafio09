@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Banner = styled.div`
   height: 250px;
   display: flex;
   justify-content: center;
@@ -14,5 +14,19 @@ export const Container = styled.div`
 
   &:hover {
     background: #b1b2b540;
+  }
+`
+
+export const Avatar = styled(Banner)`
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  img {
+    width: 140%;
+    border-radius: 50%;
   }
 `

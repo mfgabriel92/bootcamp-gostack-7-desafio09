@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useDropzone } from 'react-dropzone'
 import { FaFileUpload } from 'react-icons/fa'
-import { Container } from './styles'
+import { Banner, Avatar } from './styles'
 
-function Dropzone({ accept, onDropAccepted, banner }) {
+function Dropzone({ type, accept, onDropAccepted, banner }) {
   const [files, setFiles] = useState(null)
+  const [Container, setContainer] = useState(Banner)
   const { getRootProps, getInputProps } = useDropzone({
     accept,
     onDrop: acceptedFiles => {
@@ -17,6 +18,16 @@ function Dropzone({ accept, onDropAccepted, banner }) {
     },
     onDropAccepted,
   })
+
+  useEffect(() => {
+    switch (type) {
+      case 'avatar':
+        setContainer(Avatar)
+        break
+      default:
+        setContainer(Banner)
+    }
+  }, [type])
 
   function showPreview() {
     if (files && files.preview) {
@@ -39,6 +50,7 @@ function Dropzone({ accept, onDropAccepted, banner }) {
 }
 
 Dropzone.propTypes = {
+  type: PropTypes.string.isRequired,
   accept: PropTypes.string.isRequired,
   onDropAccepted: PropTypes.func.isRequired,
   banner: PropTypes.string,

@@ -7,13 +7,26 @@ import types from './types'
 import ErrorMessage from '../../components/ErrorMessage'
 
 export function* updateUser({ payload }) {
-  const { first_name, middle_name, last_name, email, ...rest } = payload.data
+  const {
+    avatar,
+    first_name,
+    middle_name,
+    last_name,
+    email,
+    ...rest
+  } = payload.data
   const me = Object.assign(
-    { first_name, middle_name, last_name, email },
+    { avatar, first_name, middle_name, last_name, email },
     rest.oldPassword ? rest : {}
   )
 
   try {
+    if (avatar) {
+      const image = new FormData()
+      image.append('file', avatar)
+      yield call(api.post, 'users/avatar', image)
+    }
+
     const response = yield call(api.put, 'users', me)
     toast.success('Your profile has been updated')
     yield put(updateUserSuccess(response.data.user))

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Dropzone from '../../components/Dropzone'
 
 export const Container = styled.div`
   height: 100vh;
@@ -21,4 +22,11 @@ export const Container = styled.div`
       flex: 1;
     }
   }
+`
+
+export const Avatar = styled(Dropzone)`
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 `

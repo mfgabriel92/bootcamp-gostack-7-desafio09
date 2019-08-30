@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   FaUserAlt,
@@ -11,21 +11,29 @@ import { Form } from '@rocketseat/unform'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
 import ErrorMessage from '../../components/ErrorMessage'
+import Dropzone from '../../components/Dropzone'
 import { updateUser } from '../../store/user/actions'
 import { Container } from './styles'
 import schema from '../../utils/validations/user'
 
 function Profile() {
   const [changed, setChanged] = useState(false)
+  const [avatar, setAvatar] = useState([])
   const me = useSelector(state => state.user.me)
   const { isLoading } = useSelector(state => state.user)
   const dispatch = useDispatch()
 
-  async function validateForm(data) {
+  useEffect(() => {
+    setChanged(true)
+  }, [avatar])
+
+  async function validateForm(form) {
     if (!changed) return
 
     try {
-      await schema.validate(data, { abortEarly: false })
+      await schema.validate(form, { abortEarly: false })
+      const data = Object.assign(form, { avatar: avatar[0] })
+
       dispatch(updateUser(data))
     } catch ({ errors }) {
       toast.error(<ErrorMessage errors={errors} />, { autoClose: 2000 })
@@ -41,6 +49,12 @@ function Profile() {
       </h1>
       <Form initialData={me} onSubmit={validateForm}>
         <h3>Change info</h3>
+        <Dropzone
+          type="avatar"
+          accept="image/*"
+          onDropAccepted={setAvatar}
+          banner={me.avatar && me.avatar.path}
+        />
         <Input
           icon={FaUserAlt}
           iconColor="#2d3450"

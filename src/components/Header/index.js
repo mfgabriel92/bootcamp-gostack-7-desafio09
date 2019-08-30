@@ -19,6 +19,8 @@ function Header() {
   const me = useSelector(state => state.user.me)
   const dispatch = useDispatch()
 
+  console.log(me)
+
   return (
     <Container>
       <Link to="/dashboard">
@@ -59,7 +61,7 @@ function Header() {
               onClick={() => dispatch(logoff())}
             />
           </div>
-          <img src={noImage} alt="" />
+          <img src={me.avatar ? me.avatar.path : noImage} alt="" />
         </User>
       </Right>
     </Container>
