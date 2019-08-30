@@ -19,8 +19,6 @@ function Header() {
   const me = useSelector(state => state.user.me)
   const dispatch = useDispatch()
 
-  console.log(me)
-
   return (
     <Container>
       <Link to="/dashboard">

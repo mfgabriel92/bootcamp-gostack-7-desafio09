@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { FaHome } from 'react-icons/fa'
@@ -18,6 +19,7 @@ import noBanner from '../../assets/no-banner.png'
 import noImage from '../../assets/no-user.png'
 
 function MeetUp({ meetup }) {
+  const avatar = useSelector(state => state.user.me.avatar)
   const formattedDate = useMemo(
     () => format(parseISO(meetup.date), "MMMM do, yyyy ' | ' h:mm a"),
     [meetup.date]
@@ -42,7 +44,7 @@ function MeetUp({ meetup }) {
         </Info>
         <User>
           <img
-            src={meetup.user.avatar ? meetup.user.avatar.path : noImage}
+            src={avatar ? avatar.path : noImage}
             alt={meetup.user.first_name}
           />
           <p>
